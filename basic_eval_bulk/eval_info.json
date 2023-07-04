@@ -1,0 +1,1983 @@
+{
+    "name": "101f0147-ce66-4006-a8bf-18b8336ad2c8",
+    "flow_id": "default_flow_id",
+    "input": {
+        "url": [
+            "https://www.youtube.com/watch?v=o5ZQyXaAv1g",
+            "https://www.youtube.com/watch?v=o5ZQyXaAv1g",
+            "https://www.youtube.com/watch?v=o5ZQyXaAv1g"
+        ]
+    },
+    "output": {
+        "category": [
+            "Channel",
+            "Channel",
+            "Channel"
+        ],
+        "evidence": [
+            "URL",
+            "URL",
+            "URL"
+        ]
+    },
+    "detail": {
+        "flow_runs": [
+            {
+                "run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8",
+                "status": "Completed",
+                "error": null,
+                "inputs": null,
+                "output": {
+                    "category": [
+                        "Channel",
+                        "Channel",
+                        "Channel"
+                    ],
+                    "evidence": [
+                        "URL",
+                        "URL",
+                        "URL"
+                    ]
+                },
+                "metrics": null,
+                "request": null,
+                "parent_run_id": "",
+                "root_run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8",
+                "source_run_id": "mock-bulk-test-run-id",
+                "flow_id": "default_flow_id",
+                "start_time": "2023-07-04T05:09:19.096219Z",
+                "end_time": "2023-07-04T05:09:24.526511Z",
+                "index": null,
+                "api_calls": null,
+                "variant_id": "",
+                "name": "",
+                "description": "",
+                "tags": null,
+                "system_metrics": {
+                    "inner_metrics": {
+                        "lines.completed": 3,
+                        "lines.failed": 0,
+                        "nodes.fetch_text_content_from_url.completed": 3,
+                        "nodes.fetch_text_content_from_url.failed": 0,
+                        "nodes.summarize_text_content.completed": 3,
+                        "nodes.summarize_text_content.failed": 0,
+                        "nodes.prepare_examples.completed": 3,
+                        "nodes.prepare_examples.failed": 0,
+                        "nodes.classify_with_llm.completed": 3,
+                        "nodes.classify_with_llm.failed": 0,
+                        "nodes.convert_to_dict.completed": 3,
+                        "nodes.convert_to_dict.failed": 0
+                    },
+                    "total_tokens": 2464,
+                    "total_child_runs": 3,
+                    "duration": 5.430292
+                },
+                "result": {
+                    "category": [
+                        "Channel",
+                        "Channel",
+                        "Channel"
+                    ],
+                    "evidence": [
+                        "URL",
+                        "URL",
+                        "URL"
+                    ]
+                },
+                "upload_metrics": false
+            },
+            {
+                "run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8_0",
+                "status": "Completed",
+                "error": null,
+                "inputs": {
+                    "url": "https://www.youtube.com/watch?v=o5ZQyXaAv1g",
+                    "answer": "Channel",
+                    "evidence": "Url"
+                },
+                "output": {
+                    "category": "Channel",
+                    "evidence": "URL"
+                },
+                "metrics": null,
+                "request": null,
+                "parent_run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8",
+                "root_run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8",
+                "source_run_id": null,
+                "flow_id": "default_flow_id",
+                "start_time": "2023-07-04T05:09:19.156333Z",
+                "end_time": "2023-07-04T05:09:24.219036Z",
+                "index": 0,
+                "api_calls": [
+                    {
+                        "name": "fetch_text_content_from_url",
+                        "type": "Tool",
+                        "inputs": {
+                            "url": "https://www.youtube.com/watch?v=o5ZQyXaAv1g"
+                        },
+                        "output": "[FULL] Cerita Seru Dari Kaki Gunung Lawu | BOCAH PETUALANG (25/09/20) - YouTubeAboutPressCopyrightContact usCreatorsAdvertiseDevelopersTermsPrivacyPolicy & SafetyHow YouTube worksTest new featuresNFL Sunday Ticket\u00a9 2023 Google LLC",
+                        "start_time": 1688418559.157334,
+                        "end_time": 1688418560.573399,
+                        "error": null,
+                        "children": [],
+                        "node_name": "fetch_text_content_from_url"
+                    },
+                    {
+                        "name": "summarize_text_content",
+                        "type": "Tool",
+                        "inputs": {
+                            "prompt": "Please summarize the following text in one paragraph. 100 words.\nDo not add any information that is not in the text.\nText: {{text}}\nSummary:\n",
+                            "deployment_name": "text-davinci-003",
+                            "max_tokens": 128,
+                            "temperature": 0.2,
+                            "top_p": 1.0,
+                            "echo": false,
+                            "presence_penalty": 0.0,
+                            "frequency_penalty": 0.0,
+                            "best_of": 1,
+                            "text": "[FULL] Cerita Seru Dari Kaki Gunung Lawu | BOCAH PETUALANG (25/09/20) - YouTubeAboutPressCopyrightContact usCreatorsAdvertiseDevelopersTermsPrivacyPolicy & SafetyHow YouTube worksTest new featuresNFL Sunday Ticket\u00a9 2023 Google LLC"
+                        },
+                        "output": "This YouTube video is about a thrilling story from the slopes of Mount Lawu. It follows a young adventurer who embarks on a journey to explore the mountain. The video was published on September 25th, 2020 and is hosted by BOCAH PETUALANG. It is a great opportunity to learn more about the mountain and its surrounding areas.",
+                        "start_time": 1688418560.576402,
+                        "end_time": 1688418563.245939,
+                        "error": null,
+                        "children": [
+                            {
+                                "name": "openai.api_resources.completion.Completion.create",
+                                "type": "LLM",
+                                "inputs": {
+                                    "prompt": "Please summarize the following text in one paragraph. 100 words.\nDo not add any information that is not in the text.\nText: [FULL] Cerita Seru Dari Kaki Gunung Lawu | BOCAH PETUALANG (25/09/20) - YouTubeAboutPressCopyrightContact usCreatorsAdvertiseDevelopersTermsPrivacyPolicy & SafetyHow YouTube worksTest new featuresNFL Sunday Ticket\u00a9 2023 Google LLC\nSummary:\n",
+                                    "engine": "text-davinci-003",
+                                    "suffix": null,
+                                    "max_tokens": 128,
+                                    "temperature": 0.2,
+                                    "top_p": 1.0,
+                                    "n": 1,
+                                    "stream": false,
+                                    "logprobs": null,
+                                    "echo": false,
+                                    "stop": null,
+                                    "presence_penalty": 0.0,
+                                    "frequency_penalty": 0.0,
+                                    "best_of": 1,
+                                    "logit_bias": {},
+                                    "user": "",
+                                    "request_timeout": 30,
+                                    "api_base": "https://gpt-test-eus.openai.azure.com/",
+                                    "api_type": "azure",
+                                    "api_version": "2023-03-15-preview"
+                                },
+                                "output": {
+                                    "id": "cmpl-7YSZt6KGFhnkdv0bFGN2HGpF9R0vg",
+                                    "object": "text_completion",
+                                    "created": 1688447361,
+                                    "model": "text-davinci-003",
+                                    "choices": [
+                                        {
+                                            "text": "This YouTube video is about a thrilling story from the slopes of Mount Lawu. It follows a young adventurer who embarks on a journey to explore the mountain. The video was published on September 25th, 2020 and is hosted by BOCAH PETUALANG. It is a great opportunity to learn more about the mountain and its surrounding areas.",
+                                            "index": 0,
+                                            "finish_reason": "stop",
+                                            "logprobs": null
+                                        }
+                                    ],
+                                    "usage": {
+                                        "completion_tokens": 69,
+                                        "prompt_tokens": 96,
+                                        "total_tokens": 165
+                                    }
+                                },
+                                "start_time": 1688418560.581399,
+                                "end_time": 1688418563.244938,
+                                "error": null,
+                                "children": null,
+                                "node_name": null
+                            }
+                        ],
+                        "node_name": "summarize_text_content"
+                    },
+                    {
+                        "name": "prepare_examples",
+                        "type": "Tool",
+                        "inputs": {},
+                        "output": [
+                            {
+                                "url": "https://play.google.com/store/apps/details?id=com.spotify.music",
+                                "text_content": "Spotify is a free music and podcast streaming app with millions of songs, albums, and original podcasts. It also offers audiobooks, so users can enjoy thousands of stories. It has a variety of features such as creating and sharing music playlists, discovering new music, and listening to popular and exclusive podcasts. It also has a Premium subscription option which allows users to download and listen offline, and access ad-free music. It is available on all devices and has a variety of genres and artists to choose from.",
+                                "category": "App",
+                                "evidence": "Both"
+                            },
+                            {
+                                "url": "https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw",
+                                "text_content": "NFL Sunday Ticket is a service offered by Google LLC that allows users to watch NFL games on YouTube. It is available in 2023 and is subject to the terms and privacy policy of Google LLC. It is also subject to YouTube's terms of use and any applicable laws.",
+                                "category": "Channel",
+                                "evidence": "URL"
+                            },
+                            {
+                                "url": "https://arxiv.org/abs/2303.04671",
+                                "text_content": "Visual ChatGPT is a system that enables users to interact with ChatGPT by sending and receiving not only languages but also images, providing complex visual questions or visual editing instructions, and providing feedback and asking for corrected results. It incorporates different Visual Foundation Models and is publicly available. Experiments show that Visual ChatGPT opens the door to investigating the visual roles of ChatGPT with the help of Visual Foundation Models.",
+                                "category": "Academic",
+                                "evidence": "Text content"
+                            },
+                            {
+                                "url": "https://ab.politiaromana.ro/",
+                                "text_content": "There is no content available for this text.",
+                                "category": "None",
+                                "evidence": "None"
+                            }
+                        ],
+                        "start_time": 1688418563.24694,
+                        "end_time": 1688418563.25094,
+                        "error": null,
+                        "children": [],
+                        "node_name": "prepare_examples"
+                    },
+                    {
+                        "name": "classify_with_llm",
+                        "type": "Tool",
+                        "inputs": {
+                            "prompt": "Your task is to classify a given url into one of the following types:\n# TEST file\nMovie, App, Academic, Channel, Profile, PDF or None based on the text content information.\nThe classification will be based on the url, the webpage text content summary, or both.\n\nHere are a few examples:\n{% for ex in examples %}\nURL: {{ex.url}}\nText content: {{ex.text_content}}\nOUTPUT:\n{\"category\": \"{{ex.category}}\", \"evidence\": \"{{ex.evidence}}\"}\n\n{% endfor %}\n\nFor a given URL : {{url}}, and text content: {{text_content}}.\nClassify above url to complete the category and indicate evidence.\nOUTPUT:\n",
+                            "deployment_name": "text-davinci-003",
+                            "max_tokens": 128,
+                            "temperature": 0.1,
+                            "top_p": 1.0,
+                            "echo": false,
+                            "presence_penalty": 0.0,
+                            "frequency_penalty": 0.0,
+                            "best_of": 1,
+                            "url": "https://www.youtube.com/watch?v=o5ZQyXaAv1g",
+                            "examples": [
+                                {
+                                    "url": "https://play.google.com/store/apps/details?id=com.spotify.music",
+                                    "text_content": "Spotify is a free music and podcast streaming app with millions of songs, albums, and original podcasts. It also offers audiobooks, so users can enjoy thousands of stories. It has a variety of features such as creating and sharing music playlists, discovering new music, and listening to popular and exclusive podcasts. It also has a Premium subscription option which allows users to download and listen offline, and access ad-free music. It is available on all devices and has a variety of genres and artists to choose from.",
+                                    "category": "App",
+                                    "evidence": "Both"
+                                },
+                                {
+                                    "url": "https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw",
+                                    "text_content": "NFL Sunday Ticket is a service offered by Google LLC that allows users to watch NFL games on YouTube. It is available in 2023 and is subject to the terms and privacy policy of Google LLC. It is also subject to YouTube's terms of use and any applicable laws.",
+                                    "category": "Channel",
+                                    "evidence": "URL"
+                                },
+                                {
+                                    "url": "https://arxiv.org/abs/2303.04671",
+                                    "text_content": "Visual ChatGPT is a system that enables users to interact with ChatGPT by sending and receiving not only languages but also images, providing complex visual questions or visual editing instructions, and providing feedback and asking for corrected results. It incorporates different Visual Foundation Models and is publicly available. Experiments show that Visual ChatGPT opens the door to investigating the visual roles of ChatGPT with the help of Visual Foundation Models.",
+                                    "category": "Academic",
+                                    "evidence": "Text content"
+                                },
+                                {
+                                    "url": "https://ab.politiaromana.ro/",
+                                    "text_content": "There is no content available for this text.",
+                                    "category": "None",
+                                    "evidence": "None"
+                                }
+                            ],
+                            "text_content": "This YouTube video is about a thrilling story from the slopes of Mount Lawu. It follows a young adventurer who embarks on a journey to explore the mountain. The video was published on September 25th, 2020 and is hosted by BOCAH PETUALANG. It is a great opportunity to learn more about the mountain and its surrounding areas."
+                        },
+                        "output": "{\"category\": \"Channel\", \"evidence\": \"URL\"}",
+                        "start_time": 1688418563.253939,
+                        "end_time": 1688418564.198064,
+                        "error": null,
+                        "children": [
+                            {
+                                "name": "openai.api_resources.completion.Completion.create",
+                                "type": "LLM",
+                                "inputs": {
+                                    "prompt": "Your task is to classify a given url into one of the following types:\n# TEST file\nMovie, App, Academic, Channel, Profile, PDF or None based on the text content information.\nThe classification will be based on the url, the webpage text content summary, or both.\n\nHere are a few examples:\nURL: https://play.google.com/store/apps/details?id=com.spotify.music\nText content: Spotify is a free music and podcast streaming app with millions of songs, albums, and original podcasts. It also offers audiobooks, so users can enjoy thousands of stories. It has a variety of features such as creating and sharing music playlists, discovering new music, and listening to popular and exclusive podcasts. It also has a Premium subscription option which allows users to download and listen offline, and access ad-free music. It is available on all devices and has a variety of genres and artists to choose from.\nOUTPUT:\n{\"category\": \"App\", \"evidence\": \"Both\"}\n\nURL: https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw\nText content: NFL Sunday Ticket is a service offered by Google LLC that allows users to watch NFL games on YouTube. It is available in 2023 and is subject to the terms and privacy policy of Google LLC. It is also subject to YouTube's terms of use and any applicable laws.\nOUTPUT:\n{\"category\": \"Channel\", \"evidence\": \"URL\"}\n\nURL: https://arxiv.org/abs/2303.04671\nText content: Visual ChatGPT is a system that enables users to interact with ChatGPT by sending and receiving not only languages but also images, providing complex visual questions or visual editing instructions, and providing feedback and asking for corrected results. It incorporates different Visual Foundation Models and is publicly available. Experiments show that Visual ChatGPT opens the door to investigating the visual roles of ChatGPT with the help of Visual Foundation Models.\nOUTPUT:\n{\"category\": \"Academic\", \"evidence\": \"Text content\"}\n\nURL: https://ab.politiaromana.ro/\nText content: There is no content available for this text.\nOUTPUT:\n{\"category\": \"None\", \"evidence\": \"None\"}\n\n\nFor a given URL : https://www.youtube.com/watch?v=o5ZQyXaAv1g, and text content: This YouTube video is about a thrilling story from the slopes of Mount Lawu. It follows a young adventurer who embarks on a journey to explore the mountain. The video was published on September 25th, 2020 and is hosted by BOCAH PETUALANG. It is a great opportunity to learn more about the mountain and its surrounding areas..\nClassify above url to complete the category and indicate evidence.\nOUTPUT:\n",
+                                    "engine": "text-davinci-003",
+                                    "suffix": null,
+                                    "max_tokens": 128,
+                                    "temperature": 0.1,
+                                    "top_p": 1.0,
+                                    "n": 1,
+                                    "stream": false,
+                                    "logprobs": null,
+                                    "echo": false,
+                                    "stop": null,
+                                    "presence_penalty": 0.0,
+                                    "frequency_penalty": 0.0,
+                                    "best_of": 1,
+                                    "logit_bias": {},
+                                    "user": "",
+                                    "request_timeout": 30,
+                                    "api_base": "https://gpt-test-eus.openai.azure.com/",
+                                    "api_type": "azure",
+                                    "api_version": "2023-03-15-preview"
+                                },
+                                "output": {
+                                    "id": "cmpl-7YSZvKuPUHU1YQR8eDDF0X7M1RA03",
+                                    "object": "text_completion",
+                                    "created": 1688447363,
+                                    "model": "text-davinci-003",
+                                    "choices": [
+                                        {
+                                            "text": "{\"category\": \"Channel\", \"evidence\": \"URL\"}",
+                                            "index": 0,
+                                            "finish_reason": "stop",
+                                            "logprobs": null
+                                        }
+                                    ],
+                                    "usage": {
+                                        "completion_tokens": 12,
+                                        "prompt_tokens": 621,
+                                        "total_tokens": 633
+                                    }
+                                },
+                                "start_time": 1688418563.264937,
+                                "end_time": 1688418564.195064,
+                                "error": null,
+                                "children": null,
+                                "node_name": null
+                            }
+                        ],
+                        "node_name": "classify_with_llm"
+                    },
+                    {
+                        "name": "convert_to_dict",
+                        "type": "Tool",
+                        "inputs": {
+                            "input_str": "{\"category\": \"Channel\", \"evidence\": \"URL\"}"
+                        },
+                        "output": {
+                            "category": "Channel",
+                            "evidence": "URL"
+                        },
+                        "start_time": 1688418564.203617,
+                        "end_time": 1688418564.213503,
+                        "error": null,
+                        "children": [],
+                        "node_name": "convert_to_dict"
+                    }
+                ],
+                "variant_id": "",
+                "name": "",
+                "description": "",
+                "tags": null,
+                "system_metrics": {
+                    "total_tokens": 798,
+                    "node_status_dict": {
+                        "fetch_text_content_from_url": "Completed",
+                        "summarize_text_content": "Completed",
+                        "prepare_examples": "Completed",
+                        "classify_with_llm": "Completed",
+                        "convert_to_dict": "Completed"
+                    },
+                    "duration": 5.062703
+                },
+                "result": {
+                    "category": "Channel",
+                    "evidence": "URL"
+                },
+                "upload_metrics": false
+            },
+            {
+                "run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8_1",
+                "status": "Completed",
+                "error": null,
+                "inputs": {
+                    "url": "https://www.youtube.com/watch?v=o5ZQyXaAv1g",
+                    "answer": "Channel",
+                    "evidence": "Url"
+                },
+                "output": {
+                    "category": "Channel",
+                    "evidence": "URL"
+                },
+                "metrics": null,
+                "request": null,
+                "parent_run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8",
+                "root_run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8",
+                "source_run_id": null,
+                "flow_id": "default_flow_id",
+                "start_time": "2023-07-04T05:09:19.156333Z",
+                "end_time": "2023-07-04T05:09:24.518514Z",
+                "index": 1,
+                "api_calls": [
+                    {
+                        "name": "fetch_text_content_from_url",
+                        "type": "Tool",
+                        "inputs": {
+                            "url": "https://www.youtube.com/watch?v=o5ZQyXaAv1g"
+                        },
+                        "output": "[FULL] Cerita Seru Dari Kaki Gunung Lawu | BOCAH PETUALANG (25/09/20) - YouTubeAboutPressCopyrightContact usCreatorsAdvertiseDevelopersTermsPrivacyPolicy & SafetyHow YouTube worksTest new featuresNFL Sunday Ticket\u00a9 2023 Google LLC",
+                        "start_time": 1688418559.158333,
+                        "end_time": 1688418560.788378,
+                        "error": null,
+                        "children": [],
+                        "node_name": "fetch_text_content_from_url"
+                    },
+                    {
+                        "name": "summarize_text_content",
+                        "type": "Tool",
+                        "inputs": {
+                            "prompt": "Please summarize the following text in one paragraph. 100 words.\nDo not add any information that is not in the text.\nText: {{text}}\nSummary:\n",
+                            "deployment_name": "text-davinci-003",
+                            "max_tokens": 128,
+                            "temperature": 0.2,
+                            "top_p": 1.0,
+                            "echo": false,
+                            "presence_penalty": 0.0,
+                            "frequency_penalty": 0.0,
+                            "best_of": 1,
+                            "text": "[FULL] Cerita Seru Dari Kaki Gunung Lawu | BOCAH PETUALANG (25/09/20) - YouTubeAboutPressCopyrightContact usCreatorsAdvertiseDevelopersTermsPrivacyPolicy & SafetyHow YouTube worksTest new featuresNFL Sunday Ticket\u00a9 2023 Google LLC"
+                        },
+                        "output": "This YouTube video, titled \"Cerita Seru Dari Kaki Gunung Lawu | BOCAH PETUALANG\" was released on September 25th, 2020. It features a story from the foot of Mount Lawu, and is presented by BOCAH PETUALANG. The video is subject to copyright by Google LLC, and viewers are encouraged to explore the terms of use, privacy policy, and safety features of YouTube.",
+                        "start_time": 1688418560.79038,
+                        "end_time": 1688418563.749148,
+                        "error": null,
+                        "children": [
+                            {
+                                "name": "openai.api_resources.completion.Completion.create",
+                                "type": "LLM",
+                                "inputs": {
+                                    "prompt": "Please summarize the following text in one paragraph. 100 words.\nDo not add any information that is not in the text.\nText: [FULL] Cerita Seru Dari Kaki Gunung Lawu | BOCAH PETUALANG (25/09/20) - YouTubeAboutPressCopyrightContact usCreatorsAdvertiseDevelopersTermsPrivacyPolicy & SafetyHow YouTube worksTest new featuresNFL Sunday Ticket\u00a9 2023 Google LLC\nSummary:\n",
+                                    "engine": "text-davinci-003",
+                                    "suffix": null,
+                                    "max_tokens": 128,
+                                    "temperature": 0.2,
+                                    "top_p": 1.0,
+                                    "n": 1,
+                                    "stream": false,
+                                    "logprobs": null,
+                                    "echo": false,
+                                    "stop": null,
+                                    "presence_penalty": 0.0,
+                                    "frequency_penalty": 0.0,
+                                    "best_of": 1,
+                                    "logit_bias": {},
+                                    "user": "",
+                                    "request_timeout": 30,
+                                    "api_base": "https://gpt-test-eus.openai.azure.com/",
+                                    "api_type": "azure",
+                                    "api_version": "2023-03-15-preview"
+                                },
+                                "output": {
+                                    "id": "cmpl-7YSZu8DEuR9LYKXlQCdqxz9BudM6F",
+                                    "object": "text_completion",
+                                    "created": 1688447362,
+                                    "model": "text-davinci-003",
+                                    "choices": [
+                                        {
+                                            "text": "This YouTube video, titled \"Cerita Seru Dari Kaki Gunung Lawu | BOCAH PETUALANG\" was released on September 25th, 2020. It features a story from the foot of Mount Lawu, and is presented by BOCAH PETUALANG. The video is subject to copyright by Google LLC, and viewers are encouraged to explore the terms of use, privacy policy, and safety features of YouTube.",
+                                            "index": 0,
+                                            "finish_reason": "stop",
+                                            "logprobs": null
+                                        }
+                                    ],
+                                    "usage": {
+                                        "completion_tokens": 89,
+                                        "prompt_tokens": 96,
+                                        "total_tokens": 185
+                                    }
+                                },
+                                "start_time": 1688418560.795377,
+                                "end_time": 1688418563.747088,
+                                "error": null,
+                                "children": null,
+                                "node_name": null
+                            }
+                        ],
+                        "node_name": "summarize_text_content"
+                    },
+                    {
+                        "name": "prepare_examples",
+                        "type": "Tool",
+                        "inputs": {},
+                        "output": [
+                            {
+                                "url": "https://play.google.com/store/apps/details?id=com.spotify.music",
+                                "text_content": "Spotify is a free music and podcast streaming app with millions of songs, albums, and original podcasts. It also offers audiobooks, so users can enjoy thousands of stories. It has a variety of features such as creating and sharing music playlists, discovering new music, and listening to popular and exclusive podcasts. It also has a Premium subscription option which allows users to download and listen offline, and access ad-free music. It is available on all devices and has a variety of genres and artists to choose from.",
+                                "category": "App",
+                                "evidence": "Both"
+                            },
+                            {
+                                "url": "https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw",
+                                "text_content": "NFL Sunday Ticket is a service offered by Google LLC that allows users to watch NFL games on YouTube. It is available in 2023 and is subject to the terms and privacy policy of Google LLC. It is also subject to YouTube's terms of use and any applicable laws.",
+                                "category": "Channel",
+                                "evidence": "URL"
+                            },
+                            {
+                                "url": "https://arxiv.org/abs/2303.04671",
+                                "text_content": "Visual ChatGPT is a system that enables users to interact with ChatGPT by sending and receiving not only languages but also images, providing complex visual questions or visual editing instructions, and providing feedback and asking for corrected results. It incorporates different Visual Foundation Models and is publicly available. Experiments show that Visual ChatGPT opens the door to investigating the visual roles of ChatGPT with the help of Visual Foundation Models.",
+                                "category": "Academic",
+                                "evidence": "Text content"
+                            },
+                            {
+                                "url": "https://ab.politiaromana.ro/",
+                                "text_content": "There is no content available for this text.",
+                                "category": "None",
+                                "evidence": "None"
+                            }
+                        ],
+                        "start_time": 1688418563.752088,
+                        "end_time": 1688418563.756085,
+                        "error": null,
+                        "children": [],
+                        "node_name": "prepare_examples"
+                    },
+                    {
+                        "name": "classify_with_llm",
+                        "type": "Tool",
+                        "inputs": {
+                            "prompt": "Your task is to classify a given url into one of the following types:\n# TEST file\nMovie, App, Academic, Channel, Profile, PDF or None based on the text content information.\nThe classification will be based on the url, the webpage text content summary, or both.\n\nHere are a few examples:\n{% for ex in examples %}\nURL: {{ex.url}}\nText content: {{ex.text_content}}\nOUTPUT:\n{\"category\": \"{{ex.category}}\", \"evidence\": \"{{ex.evidence}}\"}\n\n{% endfor %}\n\nFor a given URL : {{url}}, and text content: {{text_content}}.\nClassify above url to complete the category and indicate evidence.\nOUTPUT:\n",
+                            "deployment_name": "text-davinci-003",
+                            "max_tokens": 128,
+                            "temperature": 0.1,
+                            "top_p": 1.0,
+                            "echo": false,
+                            "presence_penalty": 0.0,
+                            "frequency_penalty": 0.0,
+                            "best_of": 1,
+                            "url": "https://www.youtube.com/watch?v=o5ZQyXaAv1g",
+                            "examples": [
+                                {
+                                    "url": "https://play.google.com/store/apps/details?id=com.spotify.music",
+                                    "text_content": "Spotify is a free music and podcast streaming app with millions of songs, albums, and original podcasts. It also offers audiobooks, so users can enjoy thousands of stories. It has a variety of features such as creating and sharing music playlists, discovering new music, and listening to popular and exclusive podcasts. It also has a Premium subscription option which allows users to download and listen offline, and access ad-free music. It is available on all devices and has a variety of genres and artists to choose from.",
+                                    "category": "App",
+                                    "evidence": "Both"
+                                },
+                                {
+                                    "url": "https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw",
+                                    "text_content": "NFL Sunday Ticket is a service offered by Google LLC that allows users to watch NFL games on YouTube. It is available in 2023 and is subject to the terms and privacy policy of Google LLC. It is also subject to YouTube's terms of use and any applicable laws.",
+                                    "category": "Channel",
+                                    "evidence": "URL"
+                                },
+                                {
+                                    "url": "https://arxiv.org/abs/2303.04671",
+                                    "text_content": "Visual ChatGPT is a system that enables users to interact with ChatGPT by sending and receiving not only languages but also images, providing complex visual questions or visual editing instructions, and providing feedback and asking for corrected results. It incorporates different Visual Foundation Models and is publicly available. Experiments show that Visual ChatGPT opens the door to investigating the visual roles of ChatGPT with the help of Visual Foundation Models.",
+                                    "category": "Academic",
+                                    "evidence": "Text content"
+                                },
+                                {
+                                    "url": "https://ab.politiaromana.ro/",
+                                    "text_content": "There is no content available for this text.",
+                                    "category": "None",
+                                    "evidence": "None"
+                                }
+                            ],
+                            "text_content": "This YouTube video, titled \"Cerita Seru Dari Kaki Gunung Lawu | BOCAH PETUALANG\" was released on September 25th, 2020. It features a story from the foot of Mount Lawu, and is presented by BOCAH PETUALANG. The video is subject to copyright by Google LLC, and viewers are encouraged to explore the terms of use, privacy policy, and safety features of YouTube."
+                        },
+                        "output": "{\"category\": \"Channel\", \"evidence\": \"URL\"}",
+                        "start_time": 1688418563.759087,
+                        "end_time": 1688418564.513509,
+                        "error": null,
+                        "children": [
+                            {
+                                "name": "openai.api_resources.completion.Completion.create",
+                                "type": "LLM",
+                                "inputs": {
+                                    "prompt": "Your task is to classify a given url into one of the following types:\n# TEST file\nMovie, App, Academic, Channel, Profile, PDF or None based on the text content information.\nThe classification will be based on the url, the webpage text content summary, or both.\n\nHere are a few examples:\nURL: https://play.google.com/store/apps/details?id=com.spotify.music\nText content: Spotify is a free music and podcast streaming app with millions of songs, albums, and original podcasts. It also offers audiobooks, so users can enjoy thousands of stories. It has a variety of features such as creating and sharing music playlists, discovering new music, and listening to popular and exclusive podcasts. It also has a Premium subscription option which allows users to download and listen offline, and access ad-free music. It is available on all devices and has a variety of genres and artists to choose from.\nOUTPUT:\n{\"category\": \"App\", \"evidence\": \"Both\"}\n\nURL: https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw\nText content: NFL Sunday Ticket is a service offered by Google LLC that allows users to watch NFL games on YouTube. It is available in 2023 and is subject to the terms and privacy policy of Google LLC. It is also subject to YouTube's terms of use and any applicable laws.\nOUTPUT:\n{\"category\": \"Channel\", \"evidence\": \"URL\"}\n\nURL: https://arxiv.org/abs/2303.04671\nText content: Visual ChatGPT is a system that enables users to interact with ChatGPT by sending and receiving not only languages but also images, providing complex visual questions or visual editing instructions, and providing feedback and asking for corrected results. It incorporates different Visual Foundation Models and is publicly available. Experiments show that Visual ChatGPT opens the door to investigating the visual roles of ChatGPT with the help of Visual Foundation Models.\nOUTPUT:\n{\"category\": \"Academic\", \"evidence\": \"Text content\"}\n\nURL: https://ab.politiaromana.ro/\nText content: There is no content available for this text.\nOUTPUT:\n{\"category\": \"None\", \"evidence\": \"None\"}\n\n\nFor a given URL : https://www.youtube.com/watch?v=o5ZQyXaAv1g, and text content: This YouTube video, titled \"Cerita Seru Dari Kaki Gunung Lawu | BOCAH PETUALANG\" was released on September 25th, 2020. It features a story from the foot of Mount Lawu, and is presented by BOCAH PETUALANG. The video is subject to copyright by Google LLC, and viewers are encouraged to explore the terms of use, privacy policy, and safety features of YouTube..\nClassify above url to complete the category and indicate evidence.\nOUTPUT:\n",
+                                    "engine": "text-davinci-003",
+                                    "suffix": null,
+                                    "max_tokens": 128,
+                                    "temperature": 0.1,
+                                    "top_p": 1.0,
+                                    "n": 1,
+                                    "stream": false,
+                                    "logprobs": null,
+                                    "echo": false,
+                                    "stop": null,
+                                    "presence_penalty": 0.0,
+                                    "frequency_penalty": 0.0,
+                                    "best_of": 1,
+                                    "logit_bias": {},
+                                    "user": "",
+                                    "request_timeout": 30,
+                                    "api_base": "https://gpt-test-eus.openai.azure.com/",
+                                    "api_type": "azure",
+                                    "api_version": "2023-03-15-preview"
+                                },
+                                "output": {
+                                    "id": "cmpl-7YSZweT5ygrJiyl5rZ3c5OfDmtyFd",
+                                    "object": "text_completion",
+                                    "created": 1688447364,
+                                    "model": "text-davinci-003",
+                                    "choices": [
+                                        {
+                                            "text": "{\"category\": \"Channel\", \"evidence\": \"URL\"}",
+                                            "index": 0,
+                                            "finish_reason": "stop",
+                                            "logprobs": null
+                                        }
+                                    ],
+                                    "usage": {
+                                        "completion_tokens": 12,
+                                        "prompt_tokens": 641,
+                                        "total_tokens": 653
+                                    }
+                                },
+                                "start_time": 1688418563.778086,
+                                "end_time": 1688418564.512509,
+                                "error": null,
+                                "children": null,
+                                "node_name": null
+                            }
+                        ],
+                        "node_name": "classify_with_llm"
+                    },
+                    {
+                        "name": "convert_to_dict",
+                        "type": "Tool",
+                        "inputs": {
+                            "input_str": "{\"category\": \"Channel\", \"evidence\": \"URL\"}"
+                        },
+                        "output": {
+                            "category": "Channel",
+                            "evidence": "URL"
+                        },
+                        "start_time": 1688418564.515511,
+                        "end_time": 1688418564.51751,
+                        "error": null,
+                        "children": [],
+                        "node_name": "convert_to_dict"
+                    }
+                ],
+                "variant_id": "",
+                "name": "",
+                "description": "",
+                "tags": null,
+                "system_metrics": {
+                    "total_tokens": 838,
+                    "node_status_dict": {
+                        "fetch_text_content_from_url": "Completed",
+                        "summarize_text_content": "Completed",
+                        "prepare_examples": "Completed",
+                        "classify_with_llm": "Completed",
+                        "convert_to_dict": "Completed"
+                    },
+                    "duration": 5.362181
+                },
+                "result": {
+                    "category": "Channel",
+                    "evidence": "URL"
+                },
+                "upload_metrics": false
+            },
+            {
+                "run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8_2",
+                "status": "Completed",
+                "error": null,
+                "inputs": {
+                    "url": "https://www.youtube.com/watch?v=o5ZQyXaAv1g",
+                    "answer": "Channel",
+                    "evidence": "Url"
+                },
+                "output": {
+                    "category": "Channel",
+                    "evidence": "URL"
+                },
+                "metrics": null,
+                "request": null,
+                "parent_run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8",
+                "root_run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8",
+                "source_run_id": null,
+                "flow_id": "default_flow_id",
+                "start_time": "2023-07-04T05:09:19.157334Z",
+                "end_time": "2023-07-04T05:09:24.472992Z",
+                "index": 2,
+                "api_calls": [
+                    {
+                        "name": "fetch_text_content_from_url",
+                        "type": "Tool",
+                        "inputs": {
+                            "url": "https://www.youtube.com/watch?v=o5ZQyXaAv1g"
+                        },
+                        "output": "[FULL] Cerita Seru Dari Kaki Gunung Lawu | BOCAH PETUALANG (25/09/20) - YouTubeAboutPressCopyrightContact usCreatorsAdvertiseDevelopersTermsPrivacyPolicy & SafetyHow YouTube worksTest new featuresNFL Sunday Ticket\u00a9 2023 Google LLC",
+                        "start_time": 1688418559.160337,
+                        "end_time": 1688418560.46688,
+                        "error": null,
+                        "children": [],
+                        "node_name": "fetch_text_content_from_url"
+                    },
+                    {
+                        "name": "summarize_text_content",
+                        "type": "Tool",
+                        "inputs": {
+                            "prompt": "Please summarize the following text in one paragraph. 100 words.\nDo not add any information that is not in the text.\nText: {{text}}\nSummary:\n",
+                            "deployment_name": "text-davinci-003",
+                            "max_tokens": 128,
+                            "temperature": 0.2,
+                            "top_p": 1.0,
+                            "echo": false,
+                            "presence_penalty": 0.0,
+                            "frequency_penalty": 0.0,
+                            "best_of": 1,
+                            "text": "[FULL] Cerita Seru Dari Kaki Gunung Lawu | BOCAH PETUALANG (25/09/20) - YouTubeAboutPressCopyrightContact usCreatorsAdvertiseDevelopersTermsPrivacyPolicy & SafetyHow YouTube worksTest new featuresNFL Sunday Ticket\u00a9 2023 Google LLC"
+                        },
+                        "output": "This YouTube video tells the story of a young adventurer who climbed Mount Lawu. The video was released on September 25th, 2020 and is presented by BOCAH PETUALANG. It follows the young explorer as he takes on the challenge of scaling the mountain and showcases the breathtaking views and thrilling moments he experienced along the way. The video is a great way to experience the beauty and excitement of climbing Mount Lawu.",
+                        "start_time": 1688418560.471882,
+                        "end_time": 1688418563.581363,
+                        "error": null,
+                        "children": [
+                            {
+                                "name": "openai.api_resources.completion.Completion.create",
+                                "type": "LLM",
+                                "inputs": {
+                                    "prompt": "Please summarize the following text in one paragraph. 100 words.\nDo not add any information that is not in the text.\nText: [FULL] Cerita Seru Dari Kaki Gunung Lawu | BOCAH PETUALANG (25/09/20) - YouTubeAboutPressCopyrightContact usCreatorsAdvertiseDevelopersTermsPrivacyPolicy & SafetyHow YouTube worksTest new featuresNFL Sunday Ticket\u00a9 2023 Google LLC\nSummary:\n",
+                                    "engine": "text-davinci-003",
+                                    "suffix": null,
+                                    "max_tokens": 128,
+                                    "temperature": 0.2,
+                                    "top_p": 1.0,
+                                    "n": 1,
+                                    "stream": false,
+                                    "logprobs": null,
+                                    "echo": false,
+                                    "stop": null,
+                                    "presence_penalty": 0.0,
+                                    "frequency_penalty": 0.0,
+                                    "best_of": 1,
+                                    "logit_bias": {},
+                                    "user": "",
+                                    "request_timeout": 30,
+                                    "api_base": "https://gpt-test-eus.openai.azure.com/",
+                                    "api_type": "azure",
+                                    "api_version": "2023-03-15-preview"
+                                },
+                                "output": {
+                                    "id": "cmpl-7YSZtRJsCuHHneMqo9PE0IjlahLG6",
+                                    "object": "text_completion",
+                                    "created": 1688447361,
+                                    "model": "text-davinci-003",
+                                    "choices": [
+                                        {
+                                            "text": "This YouTube video tells the story of a young adventurer who climbed Mount Lawu. The video was released on September 25th, 2020 and is presented by BOCAH PETUALANG. It follows the young explorer as he takes on the challenge of scaling the mountain and showcases the breathtaking views and thrilling moments he experienced along the way. The video is a great way to experience the beauty and excitement of climbing Mount Lawu.",
+                                            "index": 0,
+                                            "finish_reason": "stop",
+                                            "logprobs": null
+                                        }
+                                    ],
+                                    "usage": {
+                                        "completion_tokens": 84,
+                                        "prompt_tokens": 96,
+                                        "total_tokens": 180
+                                    }
+                                },
+                                "start_time": 1688418560.48388,
+                                "end_time": 1688418563.580828,
+                                "error": null,
+                                "children": null,
+                                "node_name": null
+                            }
+                        ],
+                        "node_name": "summarize_text_content"
+                    },
+                    {
+                        "name": "prepare_examples",
+                        "type": "Tool",
+                        "inputs": {},
+                        "output": [
+                            {
+                                "url": "https://play.google.com/store/apps/details?id=com.spotify.music",
+                                "text_content": "Spotify is a free music and podcast streaming app with millions of songs, albums, and original podcasts. It also offers audiobooks, so users can enjoy thousands of stories. It has a variety of features such as creating and sharing music playlists, discovering new music, and listening to popular and exclusive podcasts. It also has a Premium subscription option which allows users to download and listen offline, and access ad-free music. It is available on all devices and has a variety of genres and artists to choose from.",
+                                "category": "App",
+                                "evidence": "Both"
+                            },
+                            {
+                                "url": "https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw",
+                                "text_content": "NFL Sunday Ticket is a service offered by Google LLC that allows users to watch NFL games on YouTube. It is available in 2023 and is subject to the terms and privacy policy of Google LLC. It is also subject to YouTube's terms of use and any applicable laws.",
+                                "category": "Channel",
+                                "evidence": "URL"
+                            },
+                            {
+                                "url": "https://arxiv.org/abs/2303.04671",
+                                "text_content": "Visual ChatGPT is a system that enables users to interact with ChatGPT by sending and receiving not only languages but also images, providing complex visual questions or visual editing instructions, and providing feedback and asking for corrected results. It incorporates different Visual Foundation Models and is publicly available. Experiments show that Visual ChatGPT opens the door to investigating the visual roles of ChatGPT with the help of Visual Foundation Models.",
+                                "category": "Academic",
+                                "evidence": "Text content"
+                            },
+                            {
+                                "url": "https://ab.politiaromana.ro/",
+                                "text_content": "There is no content available for this text.",
+                                "category": "None",
+                                "evidence": "None"
+                            }
+                        ],
+                        "start_time": 1688418563.583748,
+                        "end_time": 1688418563.586704,
+                        "error": null,
+                        "children": [],
+                        "node_name": "prepare_examples"
+                    },
+                    {
+                        "name": "classify_with_llm",
+                        "type": "Tool",
+                        "inputs": {
+                            "prompt": "Your task is to classify a given url into one of the following types:\n# TEST file\nMovie, App, Academic, Channel, Profile, PDF or None based on the text content information.\nThe classification will be based on the url, the webpage text content summary, or both.\n\nHere are a few examples:\n{% for ex in examples %}\nURL: {{ex.url}}\nText content: {{ex.text_content}}\nOUTPUT:\n{\"category\": \"{{ex.category}}\", \"evidence\": \"{{ex.evidence}}\"}\n\n{% endfor %}\n\nFor a given URL : {{url}}, and text content: {{text_content}}.\nClassify above url to complete the category and indicate evidence.\nOUTPUT:\n",
+                            "deployment_name": "text-davinci-003",
+                            "max_tokens": 128,
+                            "temperature": 0.1,
+                            "top_p": 1.0,
+                            "echo": false,
+                            "presence_penalty": 0.0,
+                            "frequency_penalty": 0.0,
+                            "best_of": 1,
+                            "url": "https://www.youtube.com/watch?v=o5ZQyXaAv1g",
+                            "examples": [
+                                {
+                                    "url": "https://play.google.com/store/apps/details?id=com.spotify.music",
+                                    "text_content": "Spotify is a free music and podcast streaming app with millions of songs, albums, and original podcasts. It also offers audiobooks, so users can enjoy thousands of stories. It has a variety of features such as creating and sharing music playlists, discovering new music, and listening to popular and exclusive podcasts. It also has a Premium subscription option which allows users to download and listen offline, and access ad-free music. It is available on all devices and has a variety of genres and artists to choose from.",
+                                    "category": "App",
+                                    "evidence": "Both"
+                                },
+                                {
+                                    "url": "https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw",
+                                    "text_content": "NFL Sunday Ticket is a service offered by Google LLC that allows users to watch NFL games on YouTube. It is available in 2023 and is subject to the terms and privacy policy of Google LLC. It is also subject to YouTube's terms of use and any applicable laws.",
+                                    "category": "Channel",
+                                    "evidence": "URL"
+                                },
+                                {
+                                    "url": "https://arxiv.org/abs/2303.04671",
+                                    "text_content": "Visual ChatGPT is a system that enables users to interact with ChatGPT by sending and receiving not only languages but also images, providing complex visual questions or visual editing instructions, and providing feedback and asking for corrected results. It incorporates different Visual Foundation Models and is publicly available. Experiments show that Visual ChatGPT opens the door to investigating the visual roles of ChatGPT with the help of Visual Foundation Models.",
+                                    "category": "Academic",
+                                    "evidence": "Text content"
+                                },
+                                {
+                                    "url": "https://ab.politiaromana.ro/",
+                                    "text_content": "There is no content available for this text.",
+                                    "category": "None",
+                                    "evidence": "None"
+                                }
+                            ],
+                            "text_content": "This YouTube video tells the story of a young adventurer who climbed Mount Lawu. The video was released on September 25th, 2020 and is presented by BOCAH PETUALANG. It follows the young explorer as he takes on the challenge of scaling the mountain and showcases the breathtaking views and thrilling moments he experienced along the way. The video is a great way to experience the beauty and excitement of climbing Mount Lawu."
+                        },
+                        "output": "{\"category\": \"Channel\", \"evidence\": \"URL\"}",
+                        "start_time": 1688418563.589774,
+                        "end_time": 1688418564.465993,
+                        "error": null,
+                        "children": [
+                            {
+                                "name": "openai.api_resources.completion.Completion.create",
+                                "type": "LLM",
+                                "inputs": {
+                                    "prompt": "Your task is to classify a given url into one of the following types:\n# TEST file\nMovie, App, Academic, Channel, Profile, PDF or None based on the text content information.\nThe classification will be based on the url, the webpage text content summary, or both.\n\nHere are a few examples:\nURL: https://play.google.com/store/apps/details?id=com.spotify.music\nText content: Spotify is a free music and podcast streaming app with millions of songs, albums, and original podcasts. It also offers audiobooks, so users can enjoy thousands of stories. It has a variety of features such as creating and sharing music playlists, discovering new music, and listening to popular and exclusive podcasts. It also has a Premium subscription option which allows users to download and listen offline, and access ad-free music. It is available on all devices and has a variety of genres and artists to choose from.\nOUTPUT:\n{\"category\": \"App\", \"evidence\": \"Both\"}\n\nURL: https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw\nText content: NFL Sunday Ticket is a service offered by Google LLC that allows users to watch NFL games on YouTube. It is available in 2023 and is subject to the terms and privacy policy of Google LLC. It is also subject to YouTube's terms of use and any applicable laws.\nOUTPUT:\n{\"category\": \"Channel\", \"evidence\": \"URL\"}\n\nURL: https://arxiv.org/abs/2303.04671\nText content: Visual ChatGPT is a system that enables users to interact with ChatGPT by sending and receiving not only languages but also images, providing complex visual questions or visual editing instructions, and providing feedback and asking for corrected results. It incorporates different Visual Foundation Models and is publicly available. Experiments show that Visual ChatGPT opens the door to investigating the visual roles of ChatGPT with the help of Visual Foundation Models.\nOUTPUT:\n{\"category\": \"Academic\", \"evidence\": \"Text content\"}\n\nURL: https://ab.politiaromana.ro/\nText content: There is no content available for this text.\nOUTPUT:\n{\"category\": \"None\", \"evidence\": \"None\"}\n\n\nFor a given URL : https://www.youtube.com/watch?v=o5ZQyXaAv1g, and text content: This YouTube video tells the story of a young adventurer who climbed Mount Lawu. The video was released on September 25th, 2020 and is presented by BOCAH PETUALANG. It follows the young explorer as he takes on the challenge of scaling the mountain and showcases the breathtaking views and thrilling moments he experienced along the way. The video is a great way to experience the beauty and excitement of climbing Mount Lawu..\nClassify above url to complete the category and indicate evidence.\nOUTPUT:\n",
+                                    "engine": "text-davinci-003",
+                                    "suffix": null,
+                                    "max_tokens": 128,
+                                    "temperature": 0.1,
+                                    "top_p": 1.0,
+                                    "n": 1,
+                                    "stream": false,
+                                    "logprobs": null,
+                                    "echo": false,
+                                    "stop": null,
+                                    "presence_penalty": 0.0,
+                                    "frequency_penalty": 0.0,
+                                    "best_of": 1,
+                                    "logit_bias": {},
+                                    "user": "",
+                                    "request_timeout": 30,
+                                    "api_base": "https://gpt-test-eus.openai.azure.com/",
+                                    "api_type": "azure",
+                                    "api_version": "2023-03-15-preview"
+                                },
+                                "output": {
+                                    "id": "cmpl-7YSZvxU7mWH9xsx6ZSZOkv3tiWqUy",
+                                    "object": "text_completion",
+                                    "created": 1688447363,
+                                    "model": "text-davinci-003",
+                                    "choices": [
+                                        {
+                                            "text": "{\"category\": \"Channel\", \"evidence\": \"URL\"}",
+                                            "index": 0,
+                                            "finish_reason": "stop",
+                                            "logprobs": null
+                                        }
+                                    ],
+                                    "usage": {
+                                        "completion_tokens": 12,
+                                        "prompt_tokens": 636,
+                                        "total_tokens": 648
+                                    }
+                                },
+                                "start_time": 1688418563.599288,
+                                "end_time": 1688418564.464995,
+                                "error": null,
+                                "children": null,
+                                "node_name": null
+                            }
+                        ],
+                        "node_name": "classify_with_llm"
+                    },
+                    {
+                        "name": "convert_to_dict",
+                        "type": "Tool",
+                        "inputs": {
+                            "input_str": "{\"category\": \"Channel\", \"evidence\": \"URL\"}"
+                        },
+                        "output": {
+                            "category": "Channel",
+                            "evidence": "URL"
+                        },
+                        "start_time": 1688418564.468994,
+                        "end_time": 1688418564.47199,
+                        "error": null,
+                        "children": [],
+                        "node_name": "convert_to_dict"
+                    }
+                ],
+                "variant_id": "",
+                "name": "",
+                "description": "",
+                "tags": null,
+                "system_metrics": {
+                    "total_tokens": 828,
+                    "node_status_dict": {
+                        "fetch_text_content_from_url": "Completed",
+                        "summarize_text_content": "Completed",
+                        "prepare_examples": "Completed",
+                        "classify_with_llm": "Completed",
+                        "convert_to_dict": "Completed"
+                    },
+                    "duration": 5.315658
+                },
+                "result": {
+                    "category": "Channel",
+                    "evidence": "URL"
+                },
+                "upload_metrics": false
+            }
+        ],
+        "node_runs": [
+            {
+                "node": "fetch_text_content_from_url",
+                "flow_run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8",
+                "run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8_fetch_text_content_from_url_0",
+                "status": "Completed",
+                "inputs": {
+                    "url": "https://www.youtube.com/watch?v=o5ZQyXaAv1g"
+                },
+                "output": "[FULL] Cerita Seru Dari Kaki Gunung Lawu | BOCAH PETUALANG (25/09/20) - YouTubeAboutPressCopyrightContact usCreatorsAdvertiseDevelopersTermsPrivacyPolicy & SafetyHow YouTube worksTest new featuresNFL Sunday Ticket\u00a9 2023 Google LLC",
+                "metrics": null,
+                "error": null,
+                "parent_run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8_0",
+                "start_time": "2023-07-04T05:09:19.157334Z",
+                "end_time": "2023-07-04T05:09:20.573399Z",
+                "index": 0,
+                "api_calls": [],
+                "variant_id": "",
+                "cached_run_id": null,
+                "cached_flow_run_id": null,
+                "logs": {
+                    "stdout": "",
+                    "stderr": ""
+                },
+                "system_metrics": {
+                    "duration": 1.416065
+                },
+                "result": "[FULL] Cerita Seru Dari Kaki Gunung Lawu | BOCAH PETUALANG (25/09/20) - YouTubeAboutPressCopyrightContact usCreatorsAdvertiseDevelopersTermsPrivacyPolicy & SafetyHow YouTube worksTest new featuresNFL Sunday Ticket\u00a9 2023 Google LLC"
+            },
+            {
+                "node": "fetch_text_content_from_url",
+                "flow_run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8",
+                "run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8_fetch_text_content_from_url_1",
+                "status": "Completed",
+                "inputs": {
+                    "url": "https://www.youtube.com/watch?v=o5ZQyXaAv1g"
+                },
+                "output": "[FULL] Cerita Seru Dari Kaki Gunung Lawu | BOCAH PETUALANG (25/09/20) - YouTubeAboutPressCopyrightContact usCreatorsAdvertiseDevelopersTermsPrivacyPolicy & SafetyHow YouTube worksTest new featuresNFL Sunday Ticket\u00a9 2023 Google LLC",
+                "metrics": null,
+                "error": null,
+                "parent_run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8_1",
+                "start_time": "2023-07-04T05:09:19.158333Z",
+                "end_time": "2023-07-04T05:09:20.788378Z",
+                "index": 1,
+                "api_calls": [],
+                "variant_id": "",
+                "cached_run_id": null,
+                "cached_flow_run_id": null,
+                "logs": {
+                    "stdout": "",
+                    "stderr": ""
+                },
+                "system_metrics": {
+                    "duration": 1.630045
+                },
+                "result": "[FULL] Cerita Seru Dari Kaki Gunung Lawu | BOCAH PETUALANG (25/09/20) - YouTubeAboutPressCopyrightContact usCreatorsAdvertiseDevelopersTermsPrivacyPolicy & SafetyHow YouTube worksTest new featuresNFL Sunday Ticket\u00a9 2023 Google LLC"
+            },
+            {
+                "node": "fetch_text_content_from_url",
+                "flow_run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8",
+                "run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8_fetch_text_content_from_url_2",
+                "status": "Completed",
+                "inputs": {
+                    "url": "https://www.youtube.com/watch?v=o5ZQyXaAv1g"
+                },
+                "output": "[FULL] Cerita Seru Dari Kaki Gunung Lawu | BOCAH PETUALANG (25/09/20) - YouTubeAboutPressCopyrightContact usCreatorsAdvertiseDevelopersTermsPrivacyPolicy & SafetyHow YouTube worksTest new featuresNFL Sunday Ticket\u00a9 2023 Google LLC",
+                "metrics": null,
+                "error": null,
+                "parent_run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8_2",
+                "start_time": "2023-07-04T05:09:19.160337Z",
+                "end_time": "2023-07-04T05:09:20.466880Z",
+                "index": 2,
+                "api_calls": [],
+                "variant_id": "",
+                "cached_run_id": null,
+                "cached_flow_run_id": null,
+                "logs": {
+                    "stdout": "",
+                    "stderr": ""
+                },
+                "system_metrics": {
+                    "duration": 1.306543
+                },
+                "result": "[FULL] Cerita Seru Dari Kaki Gunung Lawu | BOCAH PETUALANG (25/09/20) - YouTubeAboutPressCopyrightContact usCreatorsAdvertiseDevelopersTermsPrivacyPolicy & SafetyHow YouTube worksTest new featuresNFL Sunday Ticket\u00a9 2023 Google LLC"
+            },
+            {
+                "node": "summarize_text_content",
+                "flow_run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8",
+                "run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8_summarize_text_content_2",
+                "status": "Completed",
+                "inputs": {
+                    "prompt": "Please summarize the following text in one paragraph. 100 words.\nDo not add any information that is not in the text.\nText: {{text}}\nSummary:\n",
+                    "deployment_name": "text-davinci-003",
+                    "max_tokens": 128,
+                    "temperature": 0.2,
+                    "top_p": 1.0,
+                    "echo": false,
+                    "presence_penalty": 0.0,
+                    "frequency_penalty": 0.0,
+                    "best_of": 1,
+                    "text": "[FULL] Cerita Seru Dari Kaki Gunung Lawu | BOCAH PETUALANG (25/09/20) - YouTubeAboutPressCopyrightContact usCreatorsAdvertiseDevelopersTermsPrivacyPolicy & SafetyHow YouTube worksTest new featuresNFL Sunday Ticket\u00a9 2023 Google LLC"
+                },
+                "output": "This YouTube video tells the story of a young adventurer who climbed Mount Lawu. The video was released on September 25th, 2020 and is presented by BOCAH PETUALANG. It follows the young explorer as he takes on the challenge of scaling the mountain and showcases the breathtaking views and thrilling moments he experienced along the way. The video is a great way to experience the beauty and excitement of climbing Mount Lawu.",
+                "metrics": null,
+                "error": null,
+                "parent_run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8_2",
+                "start_time": "2023-07-04T05:09:20.471882Z",
+                "end_time": "2023-07-04T05:09:23.581363Z",
+                "index": 2,
+                "api_calls": [
+                    {
+                        "name": "openai.api_resources.completion.Completion.create",
+                        "type": "LLM",
+                        "inputs": {
+                            "prompt": "Please summarize the following text in one paragraph. 100 words.\nDo not add any information that is not in the text.\nText: [FULL] Cerita Seru Dari Kaki Gunung Lawu | BOCAH PETUALANG (25/09/20) - YouTubeAboutPressCopyrightContact usCreatorsAdvertiseDevelopersTermsPrivacyPolicy & SafetyHow YouTube worksTest new featuresNFL Sunday Ticket\u00a9 2023 Google LLC\nSummary:\n",
+                            "engine": "text-davinci-003",
+                            "suffix": null,
+                            "max_tokens": 128,
+                            "temperature": 0.2,
+                            "top_p": 1.0,
+                            "n": 1,
+                            "stream": false,
+                            "logprobs": null,
+                            "echo": false,
+                            "stop": null,
+                            "presence_penalty": 0.0,
+                            "frequency_penalty": 0.0,
+                            "best_of": 1,
+                            "logit_bias": {},
+                            "user": "",
+                            "request_timeout": 30,
+                            "api_base": "https://gpt-test-eus.openai.azure.com/",
+                            "api_type": "azure",
+                            "api_version": "2023-03-15-preview"
+                        },
+                        "output": {
+                            "id": "cmpl-7YSZtRJsCuHHneMqo9PE0IjlahLG6",
+                            "object": "text_completion",
+                            "created": 1688447361,
+                            "model": "text-davinci-003",
+                            "choices": [
+                                {
+                                    "text": "This YouTube video tells the story of a young adventurer who climbed Mount Lawu. The video was released on September 25th, 2020 and is presented by BOCAH PETUALANG. It follows the young explorer as he takes on the challenge of scaling the mountain and showcases the breathtaking views and thrilling moments he experienced along the way. The video is a great way to experience the beauty and excitement of climbing Mount Lawu.",
+                                    "index": 0,
+                                    "finish_reason": "stop",
+                                    "logprobs": null
+                                }
+                            ],
+                            "usage": {
+                                "completion_tokens": 84,
+                                "prompt_tokens": 96,
+                                "total_tokens": 180
+                            }
+                        },
+                        "start_time": 1688418560.48388,
+                        "end_time": 1688418563.580828,
+                        "error": null,
+                        "children": null,
+                        "node_name": null
+                    }
+                ],
+                "variant_id": "",
+                "cached_run_id": null,
+                "cached_flow_run_id": null,
+                "logs": {
+                    "stdout": "",
+                    "stderr": ""
+                },
+                "system_metrics": {
+                    "completion_tokens": 84,
+                    "prompt_tokens": 96,
+                    "total_tokens": 180,
+                    "duration": 3.109481
+                },
+                "result": "This YouTube video tells the story of a young adventurer who climbed Mount Lawu. The video was released on September 25th, 2020 and is presented by BOCAH PETUALANG. It follows the young explorer as he takes on the challenge of scaling the mountain and showcases the breathtaking views and thrilling moments he experienced along the way. The video is a great way to experience the beauty and excitement of climbing Mount Lawu."
+            },
+            {
+                "node": "summarize_text_content",
+                "flow_run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8",
+                "run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8_summarize_text_content_0",
+                "status": "Completed",
+                "inputs": {
+                    "prompt": "Please summarize the following text in one paragraph. 100 words.\nDo not add any information that is not in the text.\nText: {{text}}\nSummary:\n",
+                    "deployment_name": "text-davinci-003",
+                    "max_tokens": 128,
+                    "temperature": 0.2,
+                    "top_p": 1.0,
+                    "echo": false,
+                    "presence_penalty": 0.0,
+                    "frequency_penalty": 0.0,
+                    "best_of": 1,
+                    "text": "[FULL] Cerita Seru Dari Kaki Gunung Lawu | BOCAH PETUALANG (25/09/20) - YouTubeAboutPressCopyrightContact usCreatorsAdvertiseDevelopersTermsPrivacyPolicy & SafetyHow YouTube worksTest new featuresNFL Sunday Ticket\u00a9 2023 Google LLC"
+                },
+                "output": "This YouTube video is about a thrilling story from the slopes of Mount Lawu. It follows a young adventurer who embarks on a journey to explore the mountain. The video was published on September 25th, 2020 and is hosted by BOCAH PETUALANG. It is a great opportunity to learn more about the mountain and its surrounding areas.",
+                "metrics": null,
+                "error": null,
+                "parent_run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8_0",
+                "start_time": "2023-07-04T05:09:20.576402Z",
+                "end_time": "2023-07-04T05:09:23.245939Z",
+                "index": 0,
+                "api_calls": [
+                    {
+                        "name": "openai.api_resources.completion.Completion.create",
+                        "type": "LLM",
+                        "inputs": {
+                            "prompt": "Please summarize the following text in one paragraph. 100 words.\nDo not add any information that is not in the text.\nText: [FULL] Cerita Seru Dari Kaki Gunung Lawu | BOCAH PETUALANG (25/09/20) - YouTubeAboutPressCopyrightContact usCreatorsAdvertiseDevelopersTermsPrivacyPolicy & SafetyHow YouTube worksTest new featuresNFL Sunday Ticket\u00a9 2023 Google LLC\nSummary:\n",
+                            "engine": "text-davinci-003",
+                            "suffix": null,
+                            "max_tokens": 128,
+                            "temperature": 0.2,
+                            "top_p": 1.0,
+                            "n": 1,
+                            "stream": false,
+                            "logprobs": null,
+                            "echo": false,
+                            "stop": null,
+                            "presence_penalty": 0.0,
+                            "frequency_penalty": 0.0,
+                            "best_of": 1,
+                            "logit_bias": {},
+                            "user": "",
+                            "request_timeout": 30,
+                            "api_base": "https://gpt-test-eus.openai.azure.com/",
+                            "api_type": "azure",
+                            "api_version": "2023-03-15-preview"
+                        },
+                        "output": {
+                            "id": "cmpl-7YSZt6KGFhnkdv0bFGN2HGpF9R0vg",
+                            "object": "text_completion",
+                            "created": 1688447361,
+                            "model": "text-davinci-003",
+                            "choices": [
+                                {
+                                    "text": "This YouTube video is about a thrilling story from the slopes of Mount Lawu. It follows a young adventurer who embarks on a journey to explore the mountain. The video was published on September 25th, 2020 and is hosted by BOCAH PETUALANG. It is a great opportunity to learn more about the mountain and its surrounding areas.",
+                                    "index": 0,
+                                    "finish_reason": "stop",
+                                    "logprobs": null
+                                }
+                            ],
+                            "usage": {
+                                "completion_tokens": 69,
+                                "prompt_tokens": 96,
+                                "total_tokens": 165
+                            }
+                        },
+                        "start_time": 1688418560.581399,
+                        "end_time": 1688418563.244938,
+                        "error": null,
+                        "children": null,
+                        "node_name": null
+                    }
+                ],
+                "variant_id": "",
+                "cached_run_id": null,
+                "cached_flow_run_id": null,
+                "logs": {
+                    "stdout": "",
+                    "stderr": ""
+                },
+                "system_metrics": {
+                    "completion_tokens": 69,
+                    "prompt_tokens": 96,
+                    "total_tokens": 165,
+                    "duration": 2.669537
+                },
+                "result": "This YouTube video is about a thrilling story from the slopes of Mount Lawu. It follows a young adventurer who embarks on a journey to explore the mountain. The video was published on September 25th, 2020 and is hosted by BOCAH PETUALANG. It is a great opportunity to learn more about the mountain and its surrounding areas."
+            },
+            {
+                "node": "summarize_text_content",
+                "flow_run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8",
+                "run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8_summarize_text_content_1",
+                "status": "Completed",
+                "inputs": {
+                    "prompt": "Please summarize the following text in one paragraph. 100 words.\nDo not add any information that is not in the text.\nText: {{text}}\nSummary:\n",
+                    "deployment_name": "text-davinci-003",
+                    "max_tokens": 128,
+                    "temperature": 0.2,
+                    "top_p": 1.0,
+                    "echo": false,
+                    "presence_penalty": 0.0,
+                    "frequency_penalty": 0.0,
+                    "best_of": 1,
+                    "text": "[FULL] Cerita Seru Dari Kaki Gunung Lawu | BOCAH PETUALANG (25/09/20) - YouTubeAboutPressCopyrightContact usCreatorsAdvertiseDevelopersTermsPrivacyPolicy & SafetyHow YouTube worksTest new featuresNFL Sunday Ticket\u00a9 2023 Google LLC"
+                },
+                "output": "This YouTube video, titled \"Cerita Seru Dari Kaki Gunung Lawu | BOCAH PETUALANG\" was released on September 25th, 2020. It features a story from the foot of Mount Lawu, and is presented by BOCAH PETUALANG. The video is subject to copyright by Google LLC, and viewers are encouraged to explore the terms of use, privacy policy, and safety features of YouTube.",
+                "metrics": null,
+                "error": null,
+                "parent_run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8_1",
+                "start_time": "2023-07-04T05:09:20.790380Z",
+                "end_time": "2023-07-04T05:09:23.749148Z",
+                "index": 1,
+                "api_calls": [
+                    {
+                        "name": "openai.api_resources.completion.Completion.create",
+                        "type": "LLM",
+                        "inputs": {
+                            "prompt": "Please summarize the following text in one paragraph. 100 words.\nDo not add any information that is not in the text.\nText: [FULL] Cerita Seru Dari Kaki Gunung Lawu | BOCAH PETUALANG (25/09/20) - YouTubeAboutPressCopyrightContact usCreatorsAdvertiseDevelopersTermsPrivacyPolicy & SafetyHow YouTube worksTest new featuresNFL Sunday Ticket\u00a9 2023 Google LLC\nSummary:\n",
+                            "engine": "text-davinci-003",
+                            "suffix": null,
+                            "max_tokens": 128,
+                            "temperature": 0.2,
+                            "top_p": 1.0,
+                            "n": 1,
+                            "stream": false,
+                            "logprobs": null,
+                            "echo": false,
+                            "stop": null,
+                            "presence_penalty": 0.0,
+                            "frequency_penalty": 0.0,
+                            "best_of": 1,
+                            "logit_bias": {},
+                            "user": "",
+                            "request_timeout": 30,
+                            "api_base": "https://gpt-test-eus.openai.azure.com/",
+                            "api_type": "azure",
+                            "api_version": "2023-03-15-preview"
+                        },
+                        "output": {
+                            "id": "cmpl-7YSZu8DEuR9LYKXlQCdqxz9BudM6F",
+                            "object": "text_completion",
+                            "created": 1688447362,
+                            "model": "text-davinci-003",
+                            "choices": [
+                                {
+                                    "text": "This YouTube video, titled \"Cerita Seru Dari Kaki Gunung Lawu | BOCAH PETUALANG\" was released on September 25th, 2020. It features a story from the foot of Mount Lawu, and is presented by BOCAH PETUALANG. The video is subject to copyright by Google LLC, and viewers are encouraged to explore the terms of use, privacy policy, and safety features of YouTube.",
+                                    "index": 0,
+                                    "finish_reason": "stop",
+                                    "logprobs": null
+                                }
+                            ],
+                            "usage": {
+                                "completion_tokens": 89,
+                                "prompt_tokens": 96,
+                                "total_tokens": 185
+                            }
+                        },
+                        "start_time": 1688418560.795377,
+                        "end_time": 1688418563.747088,
+                        "error": null,
+                        "children": null,
+                        "node_name": null
+                    }
+                ],
+                "variant_id": "",
+                "cached_run_id": null,
+                "cached_flow_run_id": null,
+                "logs": {
+                    "stdout": "",
+                    "stderr": ""
+                },
+                "system_metrics": {
+                    "completion_tokens": 89,
+                    "prompt_tokens": 96,
+                    "total_tokens": 185,
+                    "duration": 2.958768
+                },
+                "result": "This YouTube video, titled \"Cerita Seru Dari Kaki Gunung Lawu | BOCAH PETUALANG\" was released on September 25th, 2020. It features a story from the foot of Mount Lawu, and is presented by BOCAH PETUALANG. The video is subject to copyright by Google LLC, and viewers are encouraged to explore the terms of use, privacy policy, and safety features of YouTube."
+            },
+            {
+                "node": "prepare_examples",
+                "flow_run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8",
+                "run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8_prepare_examples_0",
+                "status": "Completed",
+                "inputs": {},
+                "output": [
+                    {
+                        "url": "https://play.google.com/store/apps/details?id=com.spotify.music",
+                        "text_content": "Spotify is a free music and podcast streaming app with millions of songs, albums, and original podcasts. It also offers audiobooks, so users can enjoy thousands of stories. It has a variety of features such as creating and sharing music playlists, discovering new music, and listening to popular and exclusive podcasts. It also has a Premium subscription option which allows users to download and listen offline, and access ad-free music. It is available on all devices and has a variety of genres and artists to choose from.",
+                        "category": "App",
+                        "evidence": "Both"
+                    },
+                    {
+                        "url": "https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw",
+                        "text_content": "NFL Sunday Ticket is a service offered by Google LLC that allows users to watch NFL games on YouTube. It is available in 2023 and is subject to the terms and privacy policy of Google LLC. It is also subject to YouTube's terms of use and any applicable laws.",
+                        "category": "Channel",
+                        "evidence": "URL"
+                    },
+                    {
+                        "url": "https://arxiv.org/abs/2303.04671",
+                        "text_content": "Visual ChatGPT is a system that enables users to interact with ChatGPT by sending and receiving not only languages but also images, providing complex visual questions or visual editing instructions, and providing feedback and asking for corrected results. It incorporates different Visual Foundation Models and is publicly available. Experiments show that Visual ChatGPT opens the door to investigating the visual roles of ChatGPT with the help of Visual Foundation Models.",
+                        "category": "Academic",
+                        "evidence": "Text content"
+                    },
+                    {
+                        "url": "https://ab.politiaromana.ro/",
+                        "text_content": "There is no content available for this text.",
+                        "category": "None",
+                        "evidence": "None"
+                    }
+                ],
+                "metrics": null,
+                "error": null,
+                "parent_run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8_0",
+                "start_time": "2023-07-04T05:09:23.246940Z",
+                "end_time": "2023-07-04T05:09:23.250940Z",
+                "index": 0,
+                "api_calls": [],
+                "variant_id": "",
+                "cached_run_id": null,
+                "cached_flow_run_id": null,
+                "logs": {
+                    "stdout": "",
+                    "stderr": ""
+                },
+                "system_metrics": {
+                    "duration": 0.004
+                },
+                "result": [
+                    {
+                        "url": "https://play.google.com/store/apps/details?id=com.spotify.music",
+                        "text_content": "Spotify is a free music and podcast streaming app with millions of songs, albums, and original podcasts. It also offers audiobooks, so users can enjoy thousands of stories. It has a variety of features such as creating and sharing music playlists, discovering new music, and listening to popular and exclusive podcasts. It also has a Premium subscription option which allows users to download and listen offline, and access ad-free music. It is available on all devices and has a variety of genres and artists to choose from.",
+                        "category": "App",
+                        "evidence": "Both"
+                    },
+                    {
+                        "url": "https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw",
+                        "text_content": "NFL Sunday Ticket is a service offered by Google LLC that allows users to watch NFL games on YouTube. It is available in 2023 and is subject to the terms and privacy policy of Google LLC. It is also subject to YouTube's terms of use and any applicable laws.",
+                        "category": "Channel",
+                        "evidence": "URL"
+                    },
+                    {
+                        "url": "https://arxiv.org/abs/2303.04671",
+                        "text_content": "Visual ChatGPT is a system that enables users to interact with ChatGPT by sending and receiving not only languages but also images, providing complex visual questions or visual editing instructions, and providing feedback and asking for corrected results. It incorporates different Visual Foundation Models and is publicly available. Experiments show that Visual ChatGPT opens the door to investigating the visual roles of ChatGPT with the help of Visual Foundation Models.",
+                        "category": "Academic",
+                        "evidence": "Text content"
+                    },
+                    {
+                        "url": "https://ab.politiaromana.ro/",
+                        "text_content": "There is no content available for this text.",
+                        "category": "None",
+                        "evidence": "None"
+                    }
+                ]
+            },
+            {
+                "node": "classify_with_llm",
+                "flow_run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8",
+                "run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8_classify_with_llm_0",
+                "status": "Completed",
+                "inputs": {
+                    "prompt": "Your task is to classify a given url into one of the following types:\n# TEST file\nMovie, App, Academic, Channel, Profile, PDF or None based on the text content information.\nThe classification will be based on the url, the webpage text content summary, or both.\n\nHere are a few examples:\n{% for ex in examples %}\nURL: {{ex.url}}\nText content: {{ex.text_content}}\nOUTPUT:\n{\"category\": \"{{ex.category}}\", \"evidence\": \"{{ex.evidence}}\"}\n\n{% endfor %}\n\nFor a given URL : {{url}}, and text content: {{text_content}}.\nClassify above url to complete the category and indicate evidence.\nOUTPUT:\n",
+                    "deployment_name": "text-davinci-003",
+                    "max_tokens": 128,
+                    "temperature": 0.1,
+                    "top_p": 1.0,
+                    "echo": false,
+                    "presence_penalty": 0.0,
+                    "frequency_penalty": 0.0,
+                    "best_of": 1,
+                    "url": "https://www.youtube.com/watch?v=o5ZQyXaAv1g",
+                    "examples": [
+                        {
+                            "url": "https://play.google.com/store/apps/details?id=com.spotify.music",
+                            "text_content": "Spotify is a free music and podcast streaming app with millions of songs, albums, and original podcasts. It also offers audiobooks, so users can enjoy thousands of stories. It has a variety of features such as creating and sharing music playlists, discovering new music, and listening to popular and exclusive podcasts. It also has a Premium subscription option which allows users to download and listen offline, and access ad-free music. It is available on all devices and has a variety of genres and artists to choose from.",
+                            "category": "App",
+                            "evidence": "Both"
+                        },
+                        {
+                            "url": "https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw",
+                            "text_content": "NFL Sunday Ticket is a service offered by Google LLC that allows users to watch NFL games on YouTube. It is available in 2023 and is subject to the terms and privacy policy of Google LLC. It is also subject to YouTube's terms of use and any applicable laws.",
+                            "category": "Channel",
+                            "evidence": "URL"
+                        },
+                        {
+                            "url": "https://arxiv.org/abs/2303.04671",
+                            "text_content": "Visual ChatGPT is a system that enables users to interact with ChatGPT by sending and receiving not only languages but also images, providing complex visual questions or visual editing instructions, and providing feedback and asking for corrected results. It incorporates different Visual Foundation Models and is publicly available. Experiments show that Visual ChatGPT opens the door to investigating the visual roles of ChatGPT with the help of Visual Foundation Models.",
+                            "category": "Academic",
+                            "evidence": "Text content"
+                        },
+                        {
+                            "url": "https://ab.politiaromana.ro/",
+                            "text_content": "There is no content available for this text.",
+                            "category": "None",
+                            "evidence": "None"
+                        }
+                    ],
+                    "text_content": "This YouTube video is about a thrilling story from the slopes of Mount Lawu. It follows a young adventurer who embarks on a journey to explore the mountain. The video was published on September 25th, 2020 and is hosted by BOCAH PETUALANG. It is a great opportunity to learn more about the mountain and its surrounding areas."
+                },
+                "output": "{\"category\": \"Channel\", \"evidence\": \"URL\"}",
+                "metrics": null,
+                "error": null,
+                "parent_run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8_0",
+                "start_time": "2023-07-04T05:09:23.253939Z",
+                "end_time": "2023-07-04T05:09:24.198064Z",
+                "index": 0,
+                "api_calls": [
+                    {
+                        "name": "openai.api_resources.completion.Completion.create",
+                        "type": "LLM",
+                        "inputs": {
+                            "prompt": "Your task is to classify a given url into one of the following types:\n# TEST file\nMovie, App, Academic, Channel, Profile, PDF or None based on the text content information.\nThe classification will be based on the url, the webpage text content summary, or both.\n\nHere are a few examples:\nURL: https://play.google.com/store/apps/details?id=com.spotify.music\nText content: Spotify is a free music and podcast streaming app with millions of songs, albums, and original podcasts. It also offers audiobooks, so users can enjoy thousands of stories. It has a variety of features such as creating and sharing music playlists, discovering new music, and listening to popular and exclusive podcasts. It also has a Premium subscription option which allows users to download and listen offline, and access ad-free music. It is available on all devices and has a variety of genres and artists to choose from.\nOUTPUT:\n{\"category\": \"App\", \"evidence\": \"Both\"}\n\nURL: https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw\nText content: NFL Sunday Ticket is a service offered by Google LLC that allows users to watch NFL games on YouTube. It is available in 2023 and is subject to the terms and privacy policy of Google LLC. It is also subject to YouTube's terms of use and any applicable laws.\nOUTPUT:\n{\"category\": \"Channel\", \"evidence\": \"URL\"}\n\nURL: https://arxiv.org/abs/2303.04671\nText content: Visual ChatGPT is a system that enables users to interact with ChatGPT by sending and receiving not only languages but also images, providing complex visual questions or visual editing instructions, and providing feedback and asking for corrected results. It incorporates different Visual Foundation Models and is publicly available. Experiments show that Visual ChatGPT opens the door to investigating the visual roles of ChatGPT with the help of Visual Foundation Models.\nOUTPUT:\n{\"category\": \"Academic\", \"evidence\": \"Text content\"}\n\nURL: https://ab.politiaromana.ro/\nText content: There is no content available for this text.\nOUTPUT:\n{\"category\": \"None\", \"evidence\": \"None\"}\n\n\nFor a given URL : https://www.youtube.com/watch?v=o5ZQyXaAv1g, and text content: This YouTube video is about a thrilling story from the slopes of Mount Lawu. It follows a young adventurer who embarks on a journey to explore the mountain. The video was published on September 25th, 2020 and is hosted by BOCAH PETUALANG. It is a great opportunity to learn more about the mountain and its surrounding areas..\nClassify above url to complete the category and indicate evidence.\nOUTPUT:\n",
+                            "engine": "text-davinci-003",
+                            "suffix": null,
+                            "max_tokens": 128,
+                            "temperature": 0.1,
+                            "top_p": 1.0,
+                            "n": 1,
+                            "stream": false,
+                            "logprobs": null,
+                            "echo": false,
+                            "stop": null,
+                            "presence_penalty": 0.0,
+                            "frequency_penalty": 0.0,
+                            "best_of": 1,
+                            "logit_bias": {},
+                            "user": "",
+                            "request_timeout": 30,
+                            "api_base": "https://gpt-test-eus.openai.azure.com/",
+                            "api_type": "azure",
+                            "api_version": "2023-03-15-preview"
+                        },
+                        "output": {
+                            "id": "cmpl-7YSZvKuPUHU1YQR8eDDF0X7M1RA03",
+                            "object": "text_completion",
+                            "created": 1688447363,
+                            "model": "text-davinci-003",
+                            "choices": [
+                                {
+                                    "text": "{\"category\": \"Channel\", \"evidence\": \"URL\"}",
+                                    "index": 0,
+                                    "finish_reason": "stop",
+                                    "logprobs": null
+                                }
+                            ],
+                            "usage": {
+                                "completion_tokens": 12,
+                                "prompt_tokens": 621,
+                                "total_tokens": 633
+                            }
+                        },
+                        "start_time": 1688418563.264937,
+                        "end_time": 1688418564.195064,
+                        "error": null,
+                        "children": null,
+                        "node_name": null
+                    }
+                ],
+                "variant_id": "",
+                "cached_run_id": null,
+                "cached_flow_run_id": null,
+                "logs": {
+                    "stdout": "",
+                    "stderr": ""
+                },
+                "system_metrics": {
+                    "completion_tokens": 12,
+                    "prompt_tokens": 621,
+                    "total_tokens": 633,
+                    "duration": 0.944125
+                },
+                "result": "{\"category\": \"Channel\", \"evidence\": \"URL\"}"
+            },
+            {
+                "node": "prepare_examples",
+                "flow_run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8",
+                "run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8_prepare_examples_2",
+                "status": "Completed",
+                "inputs": {},
+                "output": [
+                    {
+                        "url": "https://play.google.com/store/apps/details?id=com.spotify.music",
+                        "text_content": "Spotify is a free music and podcast streaming app with millions of songs, albums, and original podcasts. It also offers audiobooks, so users can enjoy thousands of stories. It has a variety of features such as creating and sharing music playlists, discovering new music, and listening to popular and exclusive podcasts. It also has a Premium subscription option which allows users to download and listen offline, and access ad-free music. It is available on all devices and has a variety of genres and artists to choose from.",
+                        "category": "App",
+                        "evidence": "Both"
+                    },
+                    {
+                        "url": "https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw",
+                        "text_content": "NFL Sunday Ticket is a service offered by Google LLC that allows users to watch NFL games on YouTube. It is available in 2023 and is subject to the terms and privacy policy of Google LLC. It is also subject to YouTube's terms of use and any applicable laws.",
+                        "category": "Channel",
+                        "evidence": "URL"
+                    },
+                    {
+                        "url": "https://arxiv.org/abs/2303.04671",
+                        "text_content": "Visual ChatGPT is a system that enables users to interact with ChatGPT by sending and receiving not only languages but also images, providing complex visual questions or visual editing instructions, and providing feedback and asking for corrected results. It incorporates different Visual Foundation Models and is publicly available. Experiments show that Visual ChatGPT opens the door to investigating the visual roles of ChatGPT with the help of Visual Foundation Models.",
+                        "category": "Academic",
+                        "evidence": "Text content"
+                    },
+                    {
+                        "url": "https://ab.politiaromana.ro/",
+                        "text_content": "There is no content available for this text.",
+                        "category": "None",
+                        "evidence": "None"
+                    }
+                ],
+                "metrics": null,
+                "error": null,
+                "parent_run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8_2",
+                "start_time": "2023-07-04T05:09:23.583748Z",
+                "end_time": "2023-07-04T05:09:23.586704Z",
+                "index": 2,
+                "api_calls": [],
+                "variant_id": "",
+                "cached_run_id": null,
+                "cached_flow_run_id": null,
+                "logs": {
+                    "stdout": "",
+                    "stderr": ""
+                },
+                "system_metrics": {
+                    "duration": 0.002956
+                },
+                "result": [
+                    {
+                        "url": "https://play.google.com/store/apps/details?id=com.spotify.music",
+                        "text_content": "Spotify is a free music and podcast streaming app with millions of songs, albums, and original podcasts. It also offers audiobooks, so users can enjoy thousands of stories. It has a variety of features such as creating and sharing music playlists, discovering new music, and listening to popular and exclusive podcasts. It also has a Premium subscription option which allows users to download and listen offline, and access ad-free music. It is available on all devices and has a variety of genres and artists to choose from.",
+                        "category": "App",
+                        "evidence": "Both"
+                    },
+                    {
+                        "url": "https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw",
+                        "text_content": "NFL Sunday Ticket is a service offered by Google LLC that allows users to watch NFL games on YouTube. It is available in 2023 and is subject to the terms and privacy policy of Google LLC. It is also subject to YouTube's terms of use and any applicable laws.",
+                        "category": "Channel",
+                        "evidence": "URL"
+                    },
+                    {
+                        "url": "https://arxiv.org/abs/2303.04671",
+                        "text_content": "Visual ChatGPT is a system that enables users to interact with ChatGPT by sending and receiving not only languages but also images, providing complex visual questions or visual editing instructions, and providing feedback and asking for corrected results. It incorporates different Visual Foundation Models and is publicly available. Experiments show that Visual ChatGPT opens the door to investigating the visual roles of ChatGPT with the help of Visual Foundation Models.",
+                        "category": "Academic",
+                        "evidence": "Text content"
+                    },
+                    {
+                        "url": "https://ab.politiaromana.ro/",
+                        "text_content": "There is no content available for this text.",
+                        "category": "None",
+                        "evidence": "None"
+                    }
+                ]
+            },
+            {
+                "node": "classify_with_llm",
+                "flow_run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8",
+                "run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8_classify_with_llm_2",
+                "status": "Completed",
+                "inputs": {
+                    "prompt": "Your task is to classify a given url into one of the following types:\n# TEST file\nMovie, App, Academic, Channel, Profile, PDF or None based on the text content information.\nThe classification will be based on the url, the webpage text content summary, or both.\n\nHere are a few examples:\n{% for ex in examples %}\nURL: {{ex.url}}\nText content: {{ex.text_content}}\nOUTPUT:\n{\"category\": \"{{ex.category}}\", \"evidence\": \"{{ex.evidence}}\"}\n\n{% endfor %}\n\nFor a given URL : {{url}}, and text content: {{text_content}}.\nClassify above url to complete the category and indicate evidence.\nOUTPUT:\n",
+                    "deployment_name": "text-davinci-003",
+                    "max_tokens": 128,
+                    "temperature": 0.1,
+                    "top_p": 1.0,
+                    "echo": false,
+                    "presence_penalty": 0.0,
+                    "frequency_penalty": 0.0,
+                    "best_of": 1,
+                    "url": "https://www.youtube.com/watch?v=o5ZQyXaAv1g",
+                    "examples": [
+                        {
+                            "url": "https://play.google.com/store/apps/details?id=com.spotify.music",
+                            "text_content": "Spotify is a free music and podcast streaming app with millions of songs, albums, and original podcasts. It also offers audiobooks, so users can enjoy thousands of stories. It has a variety of features such as creating and sharing music playlists, discovering new music, and listening to popular and exclusive podcasts. It also has a Premium subscription option which allows users to download and listen offline, and access ad-free music. It is available on all devices and has a variety of genres and artists to choose from.",
+                            "category": "App",
+                            "evidence": "Both"
+                        },
+                        {
+                            "url": "https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw",
+                            "text_content": "NFL Sunday Ticket is a service offered by Google LLC that allows users to watch NFL games on YouTube. It is available in 2023 and is subject to the terms and privacy policy of Google LLC. It is also subject to YouTube's terms of use and any applicable laws.",
+                            "category": "Channel",
+                            "evidence": "URL"
+                        },
+                        {
+                            "url": "https://arxiv.org/abs/2303.04671",
+                            "text_content": "Visual ChatGPT is a system that enables users to interact with ChatGPT by sending and receiving not only languages but also images, providing complex visual questions or visual editing instructions, and providing feedback and asking for corrected results. It incorporates different Visual Foundation Models and is publicly available. Experiments show that Visual ChatGPT opens the door to investigating the visual roles of ChatGPT with the help of Visual Foundation Models.",
+                            "category": "Academic",
+                            "evidence": "Text content"
+                        },
+                        {
+                            "url": "https://ab.politiaromana.ro/",
+                            "text_content": "There is no content available for this text.",
+                            "category": "None",
+                            "evidence": "None"
+                        }
+                    ],
+                    "text_content": "This YouTube video tells the story of a young adventurer who climbed Mount Lawu. The video was released on September 25th, 2020 and is presented by BOCAH PETUALANG. It follows the young explorer as he takes on the challenge of scaling the mountain and showcases the breathtaking views and thrilling moments he experienced along the way. The video is a great way to experience the beauty and excitement of climbing Mount Lawu."
+                },
+                "output": "{\"category\": \"Channel\", \"evidence\": \"URL\"}",
+                "metrics": null,
+                "error": null,
+                "parent_run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8_2",
+                "start_time": "2023-07-04T05:09:23.589774Z",
+                "end_time": "2023-07-04T05:09:24.465993Z",
+                "index": 2,
+                "api_calls": [
+                    {
+                        "name": "openai.api_resources.completion.Completion.create",
+                        "type": "LLM",
+                        "inputs": {
+                            "prompt": "Your task is to classify a given url into one of the following types:\n# TEST file\nMovie, App, Academic, Channel, Profile, PDF or None based on the text content information.\nThe classification will be based on the url, the webpage text content summary, or both.\n\nHere are a few examples:\nURL: https://play.google.com/store/apps/details?id=com.spotify.music\nText content: Spotify is a free music and podcast streaming app with millions of songs, albums, and original podcasts. It also offers audiobooks, so users can enjoy thousands of stories. It has a variety of features such as creating and sharing music playlists, discovering new music, and listening to popular and exclusive podcasts. It also has a Premium subscription option which allows users to download and listen offline, and access ad-free music. It is available on all devices and has a variety of genres and artists to choose from.\nOUTPUT:\n{\"category\": \"App\", \"evidence\": \"Both\"}\n\nURL: https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw\nText content: NFL Sunday Ticket is a service offered by Google LLC that allows users to watch NFL games on YouTube. It is available in 2023 and is subject to the terms and privacy policy of Google LLC. It is also subject to YouTube's terms of use and any applicable laws.\nOUTPUT:\n{\"category\": \"Channel\", \"evidence\": \"URL\"}\n\nURL: https://arxiv.org/abs/2303.04671\nText content: Visual ChatGPT is a system that enables users to interact with ChatGPT by sending and receiving not only languages but also images, providing complex visual questions or visual editing instructions, and providing feedback and asking for corrected results. It incorporates different Visual Foundation Models and is publicly available. Experiments show that Visual ChatGPT opens the door to investigating the visual roles of ChatGPT with the help of Visual Foundation Models.\nOUTPUT:\n{\"category\": \"Academic\", \"evidence\": \"Text content\"}\n\nURL: https://ab.politiaromana.ro/\nText content: There is no content available for this text.\nOUTPUT:\n{\"category\": \"None\", \"evidence\": \"None\"}\n\n\nFor a given URL : https://www.youtube.com/watch?v=o5ZQyXaAv1g, and text content: This YouTube video tells the story of a young adventurer who climbed Mount Lawu. The video was released on September 25th, 2020 and is presented by BOCAH PETUALANG. It follows the young explorer as he takes on the challenge of scaling the mountain and showcases the breathtaking views and thrilling moments he experienced along the way. The video is a great way to experience the beauty and excitement of climbing Mount Lawu..\nClassify above url to complete the category and indicate evidence.\nOUTPUT:\n",
+                            "engine": "text-davinci-003",
+                            "suffix": null,
+                            "max_tokens": 128,
+                            "temperature": 0.1,
+                            "top_p": 1.0,
+                            "n": 1,
+                            "stream": false,
+                            "logprobs": null,
+                            "echo": false,
+                            "stop": null,
+                            "presence_penalty": 0.0,
+                            "frequency_penalty": 0.0,
+                            "best_of": 1,
+                            "logit_bias": {},
+                            "user": "",
+                            "request_timeout": 30,
+                            "api_base": "https://gpt-test-eus.openai.azure.com/",
+                            "api_type": "azure",
+                            "api_version": "2023-03-15-preview"
+                        },
+                        "output": {
+                            "id": "cmpl-7YSZvxU7mWH9xsx6ZSZOkv3tiWqUy",
+                            "object": "text_completion",
+                            "created": 1688447363,
+                            "model": "text-davinci-003",
+                            "choices": [
+                                {
+                                    "text": "{\"category\": \"Channel\", \"evidence\": \"URL\"}",
+                                    "index": 0,
+                                    "finish_reason": "stop",
+                                    "logprobs": null
+                                }
+                            ],
+                            "usage": {
+                                "completion_tokens": 12,
+                                "prompt_tokens": 636,
+                                "total_tokens": 648
+                            }
+                        },
+                        "start_time": 1688418563.599288,
+                        "end_time": 1688418564.464995,
+                        "error": null,
+                        "children": null,
+                        "node_name": null
+                    }
+                ],
+                "variant_id": "",
+                "cached_run_id": null,
+                "cached_flow_run_id": null,
+                "logs": {
+                    "stdout": "",
+                    "stderr": ""
+                },
+                "system_metrics": {
+                    "completion_tokens": 12,
+                    "prompt_tokens": 636,
+                    "total_tokens": 648,
+                    "duration": 0.876219
+                },
+                "result": "{\"category\": \"Channel\", \"evidence\": \"URL\"}"
+            },
+            {
+                "node": "prepare_examples",
+                "flow_run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8",
+                "run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8_prepare_examples_1",
+                "status": "Completed",
+                "inputs": {},
+                "output": [
+                    {
+                        "url": "https://play.google.com/store/apps/details?id=com.spotify.music",
+                        "text_content": "Spotify is a free music and podcast streaming app with millions of songs, albums, and original podcasts. It also offers audiobooks, so users can enjoy thousands of stories. It has a variety of features such as creating and sharing music playlists, discovering new music, and listening to popular and exclusive podcasts. It also has a Premium subscription option which allows users to download and listen offline, and access ad-free music. It is available on all devices and has a variety of genres and artists to choose from.",
+                        "category": "App",
+                        "evidence": "Both"
+                    },
+                    {
+                        "url": "https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw",
+                        "text_content": "NFL Sunday Ticket is a service offered by Google LLC that allows users to watch NFL games on YouTube. It is available in 2023 and is subject to the terms and privacy policy of Google LLC. It is also subject to YouTube's terms of use and any applicable laws.",
+                        "category": "Channel",
+                        "evidence": "URL"
+                    },
+                    {
+                        "url": "https://arxiv.org/abs/2303.04671",
+                        "text_content": "Visual ChatGPT is a system that enables users to interact with ChatGPT by sending and receiving not only languages but also images, providing complex visual questions or visual editing instructions, and providing feedback and asking for corrected results. It incorporates different Visual Foundation Models and is publicly available. Experiments show that Visual ChatGPT opens the door to investigating the visual roles of ChatGPT with the help of Visual Foundation Models.",
+                        "category": "Academic",
+                        "evidence": "Text content"
+                    },
+                    {
+                        "url": "https://ab.politiaromana.ro/",
+                        "text_content": "There is no content available for this text.",
+                        "category": "None",
+                        "evidence": "None"
+                    }
+                ],
+                "metrics": null,
+                "error": null,
+                "parent_run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8_1",
+                "start_time": "2023-07-04T05:09:23.752088Z",
+                "end_time": "2023-07-04T05:09:23.756085Z",
+                "index": 1,
+                "api_calls": [],
+                "variant_id": "",
+                "cached_run_id": null,
+                "cached_flow_run_id": null,
+                "logs": {
+                    "stdout": "",
+                    "stderr": ""
+                },
+                "system_metrics": {
+                    "duration": 0.003997
+                },
+                "result": [
+                    {
+                        "url": "https://play.google.com/store/apps/details?id=com.spotify.music",
+                        "text_content": "Spotify is a free music and podcast streaming app with millions of songs, albums, and original podcasts. It also offers audiobooks, so users can enjoy thousands of stories. It has a variety of features such as creating and sharing music playlists, discovering new music, and listening to popular and exclusive podcasts. It also has a Premium subscription option which allows users to download and listen offline, and access ad-free music. It is available on all devices and has a variety of genres and artists to choose from.",
+                        "category": "App",
+                        "evidence": "Both"
+                    },
+                    {
+                        "url": "https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw",
+                        "text_content": "NFL Sunday Ticket is a service offered by Google LLC that allows users to watch NFL games on YouTube. It is available in 2023 and is subject to the terms and privacy policy of Google LLC. It is also subject to YouTube's terms of use and any applicable laws.",
+                        "category": "Channel",
+                        "evidence": "URL"
+                    },
+                    {
+                        "url": "https://arxiv.org/abs/2303.04671",
+                        "text_content": "Visual ChatGPT is a system that enables users to interact with ChatGPT by sending and receiving not only languages but also images, providing complex visual questions or visual editing instructions, and providing feedback and asking for corrected results. It incorporates different Visual Foundation Models and is publicly available. Experiments show that Visual ChatGPT opens the door to investigating the visual roles of ChatGPT with the help of Visual Foundation Models.",
+                        "category": "Academic",
+                        "evidence": "Text content"
+                    },
+                    {
+                        "url": "https://ab.politiaromana.ro/",
+                        "text_content": "There is no content available for this text.",
+                        "category": "None",
+                        "evidence": "None"
+                    }
+                ]
+            },
+            {
+                "node": "classify_with_llm",
+                "flow_run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8",
+                "run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8_classify_with_llm_1",
+                "status": "Completed",
+                "inputs": {
+                    "prompt": "Your task is to classify a given url into one of the following types:\n# TEST file\nMovie, App, Academic, Channel, Profile, PDF or None based on the text content information.\nThe classification will be based on the url, the webpage text content summary, or both.\n\nHere are a few examples:\n{% for ex in examples %}\nURL: {{ex.url}}\nText content: {{ex.text_content}}\nOUTPUT:\n{\"category\": \"{{ex.category}}\", \"evidence\": \"{{ex.evidence}}\"}\n\n{% endfor %}\n\nFor a given URL : {{url}}, and text content: {{text_content}}.\nClassify above url to complete the category and indicate evidence.\nOUTPUT:\n",
+                    "deployment_name": "text-davinci-003",
+                    "max_tokens": 128,
+                    "temperature": 0.1,
+                    "top_p": 1.0,
+                    "echo": false,
+                    "presence_penalty": 0.0,
+                    "frequency_penalty": 0.0,
+                    "best_of": 1,
+                    "url": "https://www.youtube.com/watch?v=o5ZQyXaAv1g",
+                    "examples": [
+                        {
+                            "url": "https://play.google.com/store/apps/details?id=com.spotify.music",
+                            "text_content": "Spotify is a free music and podcast streaming app with millions of songs, albums, and original podcasts. It also offers audiobooks, so users can enjoy thousands of stories. It has a variety of features such as creating and sharing music playlists, discovering new music, and listening to popular and exclusive podcasts. It also has a Premium subscription option which allows users to download and listen offline, and access ad-free music. It is available on all devices and has a variety of genres and artists to choose from.",
+                            "category": "App",
+                            "evidence": "Both"
+                        },
+                        {
+                            "url": "https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw",
+                            "text_content": "NFL Sunday Ticket is a service offered by Google LLC that allows users to watch NFL games on YouTube. It is available in 2023 and is subject to the terms and privacy policy of Google LLC. It is also subject to YouTube's terms of use and any applicable laws.",
+                            "category": "Channel",
+                            "evidence": "URL"
+                        },
+                        {
+                            "url": "https://arxiv.org/abs/2303.04671",
+                            "text_content": "Visual ChatGPT is a system that enables users to interact with ChatGPT by sending and receiving not only languages but also images, providing complex visual questions or visual editing instructions, and providing feedback and asking for corrected results. It incorporates different Visual Foundation Models and is publicly available. Experiments show that Visual ChatGPT opens the door to investigating the visual roles of ChatGPT with the help of Visual Foundation Models.",
+                            "category": "Academic",
+                            "evidence": "Text content"
+                        },
+                        {
+                            "url": "https://ab.politiaromana.ro/",
+                            "text_content": "There is no content available for this text.",
+                            "category": "None",
+                            "evidence": "None"
+                        }
+                    ],
+                    "text_content": "This YouTube video, titled \"Cerita Seru Dari Kaki Gunung Lawu | BOCAH PETUALANG\" was released on September 25th, 2020. It features a story from the foot of Mount Lawu, and is presented by BOCAH PETUALANG. The video is subject to copyright by Google LLC, and viewers are encouraged to explore the terms of use, privacy policy, and safety features of YouTube."
+                },
+                "output": "{\"category\": \"Channel\", \"evidence\": \"URL\"}",
+                "metrics": null,
+                "error": null,
+                "parent_run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8_1",
+                "start_time": "2023-07-04T05:09:23.759087Z",
+                "end_time": "2023-07-04T05:09:24.513509Z",
+                "index": 1,
+                "api_calls": [
+                    {
+                        "name": "openai.api_resources.completion.Completion.create",
+                        "type": "LLM",
+                        "inputs": {
+                            "prompt": "Your task is to classify a given url into one of the following types:\n# TEST file\nMovie, App, Academic, Channel, Profile, PDF or None based on the text content information.\nThe classification will be based on the url, the webpage text content summary, or both.\n\nHere are a few examples:\nURL: https://play.google.com/store/apps/details?id=com.spotify.music\nText content: Spotify is a free music and podcast streaming app with millions of songs, albums, and original podcasts. It also offers audiobooks, so users can enjoy thousands of stories. It has a variety of features such as creating and sharing music playlists, discovering new music, and listening to popular and exclusive podcasts. It also has a Premium subscription option which allows users to download and listen offline, and access ad-free music. It is available on all devices and has a variety of genres and artists to choose from.\nOUTPUT:\n{\"category\": \"App\", \"evidence\": \"Both\"}\n\nURL: https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw\nText content: NFL Sunday Ticket is a service offered by Google LLC that allows users to watch NFL games on YouTube. It is available in 2023 and is subject to the terms and privacy policy of Google LLC. It is also subject to YouTube's terms of use and any applicable laws.\nOUTPUT:\n{\"category\": \"Channel\", \"evidence\": \"URL\"}\n\nURL: https://arxiv.org/abs/2303.04671\nText content: Visual ChatGPT is a system that enables users to interact with ChatGPT by sending and receiving not only languages but also images, providing complex visual questions or visual editing instructions, and providing feedback and asking for corrected results. It incorporates different Visual Foundation Models and is publicly available. Experiments show that Visual ChatGPT opens the door to investigating the visual roles of ChatGPT with the help of Visual Foundation Models.\nOUTPUT:\n{\"category\": \"Academic\", \"evidence\": \"Text content\"}\n\nURL: https://ab.politiaromana.ro/\nText content: There is no content available for this text.\nOUTPUT:\n{\"category\": \"None\", \"evidence\": \"None\"}\n\n\nFor a given URL : https://www.youtube.com/watch?v=o5ZQyXaAv1g, and text content: This YouTube video, titled \"Cerita Seru Dari Kaki Gunung Lawu | BOCAH PETUALANG\" was released on September 25th, 2020. It features a story from the foot of Mount Lawu, and is presented by BOCAH PETUALANG. The video is subject to copyright by Google LLC, and viewers are encouraged to explore the terms of use, privacy policy, and safety features of YouTube..\nClassify above url to complete the category and indicate evidence.\nOUTPUT:\n",
+                            "engine": "text-davinci-003",
+                            "suffix": null,
+                            "max_tokens": 128,
+                            "temperature": 0.1,
+                            "top_p": 1.0,
+                            "n": 1,
+                            "stream": false,
+                            "logprobs": null,
+                            "echo": false,
+                            "stop": null,
+                            "presence_penalty": 0.0,
+                            "frequency_penalty": 0.0,
+                            "best_of": 1,
+                            "logit_bias": {},
+                            "user": "",
+                            "request_timeout": 30,
+                            "api_base": "https://gpt-test-eus.openai.azure.com/",
+                            "api_type": "azure",
+                            "api_version": "2023-03-15-preview"
+                        },
+                        "output": {
+                            "id": "cmpl-7YSZweT5ygrJiyl5rZ3c5OfDmtyFd",
+                            "object": "text_completion",
+                            "created": 1688447364,
+                            "model": "text-davinci-003",
+                            "choices": [
+                                {
+                                    "text": "{\"category\": \"Channel\", \"evidence\": \"URL\"}",
+                                    "index": 0,
+                                    "finish_reason": "stop",
+                                    "logprobs": null
+                                }
+                            ],
+                            "usage": {
+                                "completion_tokens": 12,
+                                "prompt_tokens": 641,
+                                "total_tokens": 653
+                            }
+                        },
+                        "start_time": 1688418563.778086,
+                        "end_time": 1688418564.512509,
+                        "error": null,
+                        "children": null,
+                        "node_name": null
+                    }
+                ],
+                "variant_id": "",
+                "cached_run_id": null,
+                "cached_flow_run_id": null,
+                "logs": {
+                    "stdout": "",
+                    "stderr": ""
+                },
+                "system_metrics": {
+                    "completion_tokens": 12,
+                    "prompt_tokens": 641,
+                    "total_tokens": 653,
+                    "duration": 0.754422
+                },
+                "result": "{\"category\": \"Channel\", \"evidence\": \"URL\"}"
+            },
+            {
+                "node": "convert_to_dict",
+                "flow_run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8",
+                "run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8_convert_to_dict_0",
+                "status": "Completed",
+                "inputs": {
+                    "input_str": "{\"category\": \"Channel\", \"evidence\": \"URL\"}"
+                },
+                "output": {
+                    "category": "Channel",
+                    "evidence": "URL"
+                },
+                "metrics": null,
+                "error": null,
+                "parent_run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8_0",
+                "start_time": "2023-07-04T05:09:24.203617Z",
+                "end_time": "2023-07-04T05:09:24.213503Z",
+                "index": 0,
+                "api_calls": [],
+                "variant_id": "",
+                "cached_run_id": null,
+                "cached_flow_run_id": null,
+                "logs": {
+                    "stdout": "",
+                    "stderr": ""
+                },
+                "system_metrics": {
+                    "duration": 0.009886
+                },
+                "result": {
+                    "category": "Channel",
+                    "evidence": "URL"
+                }
+            },
+            {
+                "node": "convert_to_dict",
+                "flow_run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8",
+                "run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8_convert_to_dict_2",
+                "status": "Completed",
+                "inputs": {
+                    "input_str": "{\"category\": \"Channel\", \"evidence\": \"URL\"}"
+                },
+                "output": {
+                    "category": "Channel",
+                    "evidence": "URL"
+                },
+                "metrics": null,
+                "error": null,
+                "parent_run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8_2",
+                "start_time": "2023-07-04T05:09:24.468994Z",
+                "end_time": "2023-07-04T05:09:24.471990Z",
+                "index": 2,
+                "api_calls": [],
+                "variant_id": "",
+                "cached_run_id": null,
+                "cached_flow_run_id": null,
+                "logs": {
+                    "stdout": "",
+                    "stderr": ""
+                },
+                "system_metrics": {
+                    "duration": 0.002996
+                },
+                "result": {
+                    "category": "Channel",
+                    "evidence": "URL"
+                }
+            },
+            {
+                "node": "convert_to_dict",
+                "flow_run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8",
+                "run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8_convert_to_dict_1",
+                "status": "Completed",
+                "inputs": {
+                    "input_str": "{\"category\": \"Channel\", \"evidence\": \"URL\"}"
+                },
+                "output": {
+                    "category": "Channel",
+                    "evidence": "URL"
+                },
+                "metrics": null,
+                "error": null,
+                "parent_run_id": "101f0147-ce66-4006-a8bf-18b8336ad2c8_1",
+                "start_time": "2023-07-04T05:09:24.515511Z",
+                "end_time": "2023-07-04T05:09:24.517510Z",
+                "index": 1,
+                "api_calls": [],
+                "variant_id": "",
+                "cached_run_id": null,
+                "cached_flow_run_id": null,
+                "logs": {
+                    "stdout": "",
+                    "stderr": ""
+                },
+                "system_metrics": {
+                    "duration": 0.001999
+                },
+                "result": {
+                    "category": "Channel",
+                    "evidence": "URL"
+                }
+            }
+        ]
+    }
+}
