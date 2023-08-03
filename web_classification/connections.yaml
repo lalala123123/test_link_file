@@ -1,0 +1,10 @@
+# This is a TEMPORARY file to create/update your connection by save action, it will be deleted once saving successfully.
+# Connection name is not allowed to be changed.
+
+name: azure_open_ai_connection
+type: AzureOpenAI
+module: promptflow.connections
+api_key: flowConnection_local_9a2e71ca00b96b46838abb2db7c453a3
+api_base: https://gpt-test-eus.openai.azure.com/
+api_type: azure
+api_version: 2023-03-15-preview

@@ -1,5 +1,5 @@
 $schema: https://azuremlschemas.azureedge.net/latest/flow.schema.json
-name: web_classificiation_flow_3
+name: web_classification
 display_name: Web Classification
 type: standard
 path: ./flow.dag.yaml

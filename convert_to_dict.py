@@ -2,8 +2,7 @@ import json
 
 from promptflow import tool
 
-print("test")
-print("aaa")
+
 @tool
 def convert_to_dict(input_str: str):
     try:

@@ -1,0 +1,606 @@
+{
+  "flow_runs": [
+    {
+      "run_id": "run_20230714115622",
+      "status": "Completed",
+      "error": null,
+      "inputs": null,
+      "output": {
+        "answer": [
+          "There are several types of container software available, such as Docker, rkt (Rocket), LXC (Linux Containers), OpenVZ, and Kubernetes."
+        ]
+      },
+      "metrics": null,
+      "request": null,
+      "parent_run_id": "",
+      "root_run_id": "run_20230714115622",
+      "source_run_id": "mock-bulk-test-run-id",
+      "flow_id": "template_chat_flow",
+      "start_time": "2023-07-14T03:56:30.789618Z",
+      "end_time": "2023-07-14T03:56:47.123203Z",
+      "index": null,
+      "api_calls": null,
+      "variant_id": "",
+      "name": "",
+      "description": "",
+      "tags": null,
+      "system_metrics": {
+        "total_tokens": 1178,
+        "total_child_runs": 1,
+        "duration": 16.333585
+      },
+      "result": {
+        "answer": [
+          "There are several types of container software available, such as Docker, rkt (Rocket), LXC (Linux Containers), OpenVZ, and Kubernetes."
+        ]
+      },
+      "upload_metrics": false
+    },
+    {
+      "run_id": "run_20230714115622_0",
+      "status": "Completed",
+      "error": null,
+      "inputs": {
+        "question": "What types of container software there are",
+        "chat_history": []
+      },
+      "output": {
+        "answer": "There are several types of container software available, such as Docker, rkt (Rocket), LXC (Linux Containers), OpenVZ, and Kubernetes."
+      },
+      "metrics": null,
+      "request": null,
+      "parent_run_id": "run_20230714115622",
+      "root_run_id": "run_20230714115622",
+      "source_run_id": null,
+      "flow_id": "template_chat_flow",
+      "start_time": "2023-07-14T03:56:30.860164Z",
+      "end_time": "2023-07-14T03:56:47.117203Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "extract_query_from_question",
+          "type": "Tool",
+          "inputs": {
+            "prompt": "system:\nYou are an AI assistant reading the transcript of a conversation between an AI and a human. Given an input question and conversation history, infer user real intent.\n\nThe conversation history is provided just in case of a coreference (e.g. \"What is this?\" where \"this\" is defined in previous conversation).\n\nReturn the output as query used for next round user message.\n\nuser:\nEXAMPLE\nConversation history:\nHuman: I want to find the best restaurants nearby, could you recommend some?\nAI: Sure, I can help you with that. Here are some of the best restaurants nearby: Rock Bar.\nHuman: How do I get to Rock Bar?\n\nOutput: directions to Rock Bar\nEND OF EXAMPLE\n\nEXAMPLE\nConversation history:\nHuman: I want to find the best restaurants nearby, could you recommend some?\nAI: Sure, I can help you with that. Here are some of the best restaurants nearby: Rock Bar.\nHuman: How do I get to Rock Bar?\nAI: To get to Rock Bar, you need to go to the 52nd floor of the Park A. You can take the subway to Station A and walk for about 8 minutes from exit A53. Alternatively, you can take the train to S Station and walk for about 12 minutes from the south exit3.\nHuman: Show me more restaurants.\n\nOutput: best restaurants nearby\nEND OF EXAMPLE\n\nConversation history (for reference only):\n{% for item in chat_history %}\nHuman: {{item.inputs.question}}\nAI: {{item.outputs.answer}}\n{% endfor %}\nHuman: {{question}}\n\nOutput:",
+            "deployment_name": "gpt-35-turbo",
+            "max_tokens": 256,
+            "temperature": 0.7,
+            "chat_history": [],
+            "question": "What types of container software there are"
+          },
+          "output": "types of container software",
+          "start_time": 1689278190.860164,
+          "end_time": 1689278192.486977,
+          "error": null,
+          "children": [
+            {
+              "name": "openai.api_resources.chat_completion.ChatCompletion.create",
+              "type": "LLM",
+              "inputs": {
+                "engine": "gpt-35-turbo",
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "You are an AI assistant reading the transcript of a conversation between an AI and a human. Given an input question and conversation history, infer user real intent.\n\nThe conversation history is provided just in case of a coreference (e.g. \"What is this?\" where \"this\" is defined in previous conversation).\n\nReturn the output as query used for next round user message."
+                  },
+                  {
+                    "role": "user",
+                    "content": "EXAMPLE\nConversation history:\nHuman: I want to find the best restaurants nearby, could you recommend some?\nAI: Sure, I can help you with that. Here are some of the best restaurants nearby: Rock Bar.\nHuman: How do I get to Rock Bar?\n\nOutput: directions to Rock Bar\nEND OF EXAMPLE\n\nEXAMPLE\nConversation history:\nHuman: I want to find the best restaurants nearby, could you recommend some?\nAI: Sure, I can help you with that. Here are some of the best restaurants nearby: Rock Bar.\nHuman: How do I get to Rock Bar?\nAI: To get to Rock Bar, you need to go to the 52nd floor of the Park A. You can take the subway to Station A and walk for about 8 minutes from exit A53. Alternatively, you can take the train to S Station and walk for about 12 minutes from the south exit3.\nHuman: Show me more restaurants.\n\nOutput: best restaurants nearby\nEND OF EXAMPLE\n\nConversation history (for reference only):\nHuman: What types of container software there are\n\nOutput:"
+                  }
+                ],
+                "temperature": 0.7,
+                "top_p": 1.0,
+                "n": 1,
+                "stream": false,
+                "stop": null,
+                "max_tokens": 256,
+                "presence_penalty": 0.0,
+                "frequency_penalty": 0.0,
+                "logit_bias": {},
+                "user": "",
+                "request_timeout": 30,
+                "api_base": "https://gpt-test-eus.openai.azure.com/",
+                "api_type": "azure",
+                "api_version": "2023-03-15-preview"
+              },
+              "output": {
+                "id": "chatcmpl-7c4Cth4BBkeqtp3Heyl1QIA3Fgbio",
+                "object": "chat.completion",
+                "created": 1689306991,
+                "model": "gpt-35-turbo",
+                "choices": [
+                  {
+                    "index": 0,
+                    "finish_reason": "stop",
+                    "message": {
+                      "role": "assistant",
+                      "content": "types of container software"
+                    }
+                  }
+                ],
+                "usage": {
+                  "completion_tokens": 4,
+                  "prompt_tokens": 308,
+                  "total_tokens": 312
+                }
+              },
+              "start_time": 1689278190.870164,
+              "end_time": 1689278192.48598,
+              "error": null,
+              "children": null,
+              "node_name": null
+            }
+          ],
+          "node_name": "extract_query_from_question"
+        },
+        {
+          "name": "get_wiki_url",
+          "type": "Tool",
+          "inputs": {
+            "entity": "types of container software",
+            "count": 2
+          },
+          "output": [
+            "https://en.wikipedia.org/w/index.php?search=Video file format ",
+            "https://en.wikipedia.org/w/index.php?search=Container Linux"
+          ],
+          "start_time": 1689278192.489979,
+          "end_time": 1689278203.581342,
+          "error": null,
+          "children": [],
+          "node_name": "get_wiki_url"
+        },
+        {
+          "name": "search_result_from_url",
+          "type": "Tool",
+          "inputs": {
+            "url_list": [
+              "https://en.wikipedia.org/w/index.php?search=Video file format ",
+              "https://en.wikipedia.org/w/index.php?search=Container Linux"
+            ],
+            "count": 10
+          },
+          "output": [
+            [
+              "https://en.wikipedia.org/w/index.php?search=Video file format ",
+              "A video file format is a type of  file format for storing digital video data on a computer system. Video is almost always stored using lossy compression to reduce the file size.. A video file normally consists of a container (e.g. in the Matroska format) containing visual (video without audio) data in a video coding format (e.g. VP9) alongside audio data in an audio coding format (e.g. Opus). The container can also contain synchronization information, subtitles, and metadata such as title. A standardized (or in some cases de facto standard) video file type such as .webm is a profile specified by a restriction on which container format and which video and audio compression formats are allowed.. The coded video and audio inside a video file container (i.e. not headers, footers, and metadata) is called the essence."
+            ],
+            [
+              "https://en.wikipedia.org/w/index.php?search=Container Linux",
+              "Container Linux  (formerly CoreOS Linux) is a discontinued open-source lightweight operating system based on the Linux kernel and designed for providing infrastructure to clustered deployments, while focusing on automation, ease of application deployment, security, reliability and scalability. As an operating system, Container Linux provided only the minimal functionality required for deploying applications inside software containers, together with built-in mechanisms for service discovery and configuration sharing.[10][11][12][13][14]. Container Linux shares foundations with Gentoo Linux,[15][16] ChromeOS, and ChromiumOS through a common software development kit (SDK). Container Linux adds new functionality and customization to this shared foundation to support server hardware and use cases.[13][17]:\u200a7:02\u200a CoreOS was developed primarily by Alex Polvi, Brandon Philips and Michael Marineau,[12] with its major features available as a stable release.[18][19][20]. The CoreOS team announced the end-of-life for Container Linux on May 26, 2020,[1] offering Fedora CoreOS,[21] and RHEL CoreOS as its replacement, both based on Red Hat.. Container Linux provides no package manager as a way for distributing payload applications, requiring instead all applications to run inside their containers. Serving as a single control host, a Container Linux instance uses the underlying operating-system-level virtualization features of the Linux kernel to create and configure multiple containers that perform as isolated Linux systems. That way, resource partitioning between containers is performed through multiple isolated userspace instances, instead of using a hypervisor and providing full-fledged virtual machines. This approach relies on the Linux kernel's cgroups and namespaces functionalities,[22][23] which together provide abilities to limit, account and isolate resource usage (CPU, memory, disk I/O, etc.) for the collections of userspace processes.[11][14][24]. Initially, Container Linux exclusively used Docker as a component providing an additional layer of abstraction and interface[25] to the operating-system-level virtualization features of the Linux kernel, as well as providing a standardized format for containers that allows applications to run in different environments.[11][24]  In December 2014, CoreOS released and started to support rkt (initially released as Rocket) as an alternative to Docker, providing through it another standardized format of the application-container images, the related definition of the container runtime environment, and a protocol for discovering and retrieving container images.[26][27][28][29]  CoreOS provides rkt as an implementation of the so-called app container (appc) specification that describes required properties of the application container image (ACI)."
+            ]
+          ],
+          "start_time": 1689278203.582339,
+          "end_time": 1689278205.709789,
+          "error": null,
+          "children": [],
+          "node_name": "search_result_from_url"
+        },
+        {
+          "name": "process_search_result",
+          "type": "Tool",
+          "inputs": {
+            "search_result": [
+              [
+                "https://en.wikipedia.org/w/index.php?search=Video file format ",
+                "A video file format is a type of  file format for storing digital video data on a computer system. Video is almost always stored using lossy compression to reduce the file size.. A video file normally consists of a container (e.g. in the Matroska format) containing visual (video without audio) data in a video coding format (e.g. VP9) alongside audio data in an audio coding format (e.g. Opus). The container can also contain synchronization information, subtitles, and metadata such as title. A standardized (or in some cases de facto standard) video file type such as .webm is a profile specified by a restriction on which container format and which video and audio compression formats are allowed.. The coded video and audio inside a video file container (i.e. not headers, footers, and metadata) is called the essence."
+              ],
+              [
+                "https://en.wikipedia.org/w/index.php?search=Container Linux",
+                "Container Linux  (formerly CoreOS Linux) is a discontinued open-source lightweight operating system based on the Linux kernel and designed for providing infrastructure to clustered deployments, while focusing on automation, ease of application deployment, security, reliability and scalability. As an operating system, Container Linux provided only the minimal functionality required for deploying applications inside software containers, together with built-in mechanisms for service discovery and configuration sharing.[10][11][12][13][14]. Container Linux shares foundations with Gentoo Linux,[15][16] ChromeOS, and ChromiumOS through a common software development kit (SDK). Container Linux adds new functionality and customization to this shared foundation to support server hardware and use cases.[13][17]:\u200a7:02\u200a CoreOS was developed primarily by Alex Polvi, Brandon Philips and Michael Marineau,[12] with its major features available as a stable release.[18][19][20]. The CoreOS team announced the end-of-life for Container Linux on May 26, 2020,[1] offering Fedora CoreOS,[21] and RHEL CoreOS as its replacement, both based on Red Hat.. Container Linux provides no package manager as a way for distributing payload applications, requiring instead all applications to run inside their containers. Serving as a single control host, a Container Linux instance uses the underlying operating-system-level virtualization features of the Linux kernel to create and configure multiple containers that perform as isolated Linux systems. That way, resource partitioning between containers is performed through multiple isolated userspace instances, instead of using a hypervisor and providing full-fledged virtual machines. This approach relies on the Linux kernel's cgroups and namespaces functionalities,[22][23] which together provide abilities to limit, account and isolate resource usage (CPU, memory, disk I/O, etc.) for the collections of userspace processes.[11][14][24]. Initially, Container Linux exclusively used Docker as a component providing an additional layer of abstraction and interface[25] to the operating-system-level virtualization features of the Linux kernel, as well as providing a standardized format for containers that allows applications to run in different environments.[11][24]  In December 2014, CoreOS released and started to support rkt (initially released as Rocket) as an alternative to Docker, providing through it another standardized format of the application-container images, the related definition of the container runtime environment, and a protocol for discovering and retrieving container images.[26][27][28][29]  CoreOS provides rkt as an implementation of the so-called app container (appc) specification that describes required properties of the application container image (ACI)."
+              ]
+            ]
+          },
+          "output": "Content: A video file format is a type of  file format for storing digital video data on a computer system. Video is almost always stored using lossy compression to reduce the file size.. A video file normally consists of a container (e.g. in the Matroska format) containing visual (video without audio) data in a video coding format (e.g. VP9) alongside audio data in an audio coding format (e.g. Opus). The container can also contain synchronization information, subtitles, and metadata such as title. A standardized (or in some cases de facto standard) video file type such as .webm is a profile specified by a restriction on which container format and which video and audio compression formats are allowed.. The coded video and audio inside a video file container (i.e. not headers, footers, and metadata) is called the essence.\nSource: https://en.wikipedia.org/w/index.php?search=Video file format \n\nContent: Container Linux  (formerly CoreOS Linux) is a discontinued open-source lightweight operating system based on the Linux kernel and designed for providing infrastructure to clustered deployments, while focusing on automation, ease of application deployment, security, reliability and scalability. As an operating system, Container Linux provided only the minimal functionality required for deploying applications inside software containers, together with built-in mechanisms for service discovery and configuration sharing.[10][11][12][13][14]. Container Linux shares foundations with Gentoo Linux,[15][16] ChromeOS, and ChromiumOS through a common software development kit (SDK). Container Linux adds new functionality and customization to this shared foundation to support server hardware and use cases.[13][17]:\u200a7:02\u200a CoreOS was developed primarily by Alex Polvi, Brandon Philips and Michael Marineau,[12] with its major features available as a stable release.[18][19][20]. The CoreOS team announced the end-of-life for Container Linux on May 26, 2020,[1] offering Fedora CoreOS,[21] and RHEL CoreOS as its replacement, both based on Red Hat.. Container Linux provides no package manager as a way for distributing payload applications, requiring instead all applications to run inside their containers. Serving as a single control host, a Container Linux instance uses the underlying operating-system-level virtualization features of the Linux kernel to create and configure multiple containers that perform as isolated Linux systems. That way, resource partitioning between containers is performed through multiple isolated userspace instances, instead of using a hypervisor and providing full-fledged virtual machines. This approach relies on the Linux kernel's cgroups and namespaces functionalities,[22][23] which together provide abilities to limit, account and isolate resource usage (CPU, memory, disk I/O, etc.) for the collections of userspace processes.[11][14][24]. Initially, Container Linux exclusively used Docker as a component providing an additional layer of abstraction and interface[25] to the operating-system-level virtualization features of the Linux kernel, as well as providing a standardized format for containers that allows applications to run in different environments.[11][24]  In December 2014, CoreOS released and started to support rkt (initially released as Rocket) as an alternative to Docker, providing through it another standardized format of the application-container images, the related definition of the container runtime environment, and a protocol for discovering and retrieving container images.[26][27][28][29]  CoreOS provides rkt as an implementation of the so-called app container (appc) specification that describes required properties of the application container image (ACI).\nSource: https://en.wikipedia.org/w/index.php?search=Container Linux",
+          "start_time": 1689278205.709789,
+          "end_time": 1689278205.710792,
+          "error": null,
+          "children": [],
+          "node_name": "process_search_result"
+        },
+        {
+          "name": "augmented_chat",
+          "type": "Tool",
+          "inputs": {
+            "prompt": "system:\nYou are a chatbot having a conversation with a human.\nGiven the following extracted parts of a long document and a question, create a final answer with references (\"SOURCES\").\nIf you don't know the answer, just say that you don't know. Don't try to make up an answer.\nALWAYS return a \"SOURCES\" part in your answer.\n\n{{contexts}}\n\n{% for item in chat_history %}\nuser:\n{{item.inputs.question}}\nassistant:\n{{item.outputs.answer}}\n{% endfor %}\n\nuser:\n{{question}}\n",
+            "deployment_name": "gpt-35-turbo",
+            "max_tokens": 256,
+            "temperature": 0.8,
+            "chat_history": [],
+            "question": "What types of container software there are",
+            "contexts": "Content: A video file format is a type of  file format for storing digital video data on a computer system. Video is almost always stored using lossy compression to reduce the file size.. A video file normally consists of a container (e.g. in the Matroska format) containing visual (video without audio) data in a video coding format (e.g. VP9) alongside audio data in an audio coding format (e.g. Opus). The container can also contain synchronization information, subtitles, and metadata such as title. A standardized (or in some cases de facto standard) video file type such as .webm is a profile specified by a restriction on which container format and which video and audio compression formats are allowed.. The coded video and audio inside a video file container (i.e. not headers, footers, and metadata) is called the essence.\nSource: https://en.wikipedia.org/w/index.php?search=Video file format \n\nContent: Container Linux  (formerly CoreOS Linux) is a discontinued open-source lightweight operating system based on the Linux kernel and designed for providing infrastructure to clustered deployments, while focusing on automation, ease of application deployment, security, reliability and scalability. As an operating system, Container Linux provided only the minimal functionality required for deploying applications inside software containers, together with built-in mechanisms for service discovery and configuration sharing.[10][11][12][13][14]. Container Linux shares foundations with Gentoo Linux,[15][16] ChromeOS, and ChromiumOS through a common software development kit (SDK). Container Linux adds new functionality and customization to this shared foundation to support server hardware and use cases.[13][17]:\u200a7:02\u200a CoreOS was developed primarily by Alex Polvi, Brandon Philips and Michael Marineau,[12] with its major features available as a stable release.[18][19][20]. The CoreOS team announced the end-of-life for Container Linux on May 26, 2020,[1] offering Fedora CoreOS,[21] and RHEL CoreOS as its replacement, both based on Red Hat.. Container Linux provides no package manager as a way for distributing payload applications, requiring instead all applications to run inside their containers. Serving as a single control host, a Container Linux instance uses the underlying operating-system-level virtualization features of the Linux kernel to create and configure multiple containers that perform as isolated Linux systems. That way, resource partitioning between containers is performed through multiple isolated userspace instances, instead of using a hypervisor and providing full-fledged virtual machines. This approach relies on the Linux kernel's cgroups and namespaces functionalities,[22][23] which together provide abilities to limit, account and isolate resource usage (CPU, memory, disk I/O, etc.) for the collections of userspace processes.[11][14][24]. Initially, Container Linux exclusively used Docker as a component providing an additional layer of abstraction and interface[25] to the operating-system-level virtualization features of the Linux kernel, as well as providing a standardized format for containers that allows applications to run in different environments.[11][24]  In December 2014, CoreOS released and started to support rkt (initially released as Rocket) as an alternative to Docker, providing through it another standardized format of the application-container images, the related definition of the container runtime environment, and a protocol for discovering and retrieving container images.[26][27][28][29]  CoreOS provides rkt as an implementation of the so-called app container (appc) specification that describes required properties of the application container image (ACI).\nSource: https://en.wikipedia.org/w/index.php?search=Container Linux"
+          },
+          "output": "There are several types of container software available, such as Docker, rkt (Rocket), LXC (Linux Containers), OpenVZ, and Kubernetes.",
+          "start_time": 1689278205.711788,
+          "end_time": 1689278207.117203,
+          "error": null,
+          "children": [
+            {
+              "name": "openai.api_resources.chat_completion.ChatCompletion.create",
+              "type": "LLM",
+              "inputs": {
+                "engine": "gpt-35-turbo",
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "You are a chatbot having a conversation with a human.\nGiven the following extracted parts of a long document and a question, create a final answer with references (\"SOURCES\").\nIf you don't know the answer, just say that you don't know. Don't try to make up an answer.\nALWAYS return a \"SOURCES\" part in your answer.\n\nContent: A video file format is a type of  file format for storing digital video data on a computer system. Video is almost always stored using lossy compression to reduce the file size.. A video file normally consists of a container (e.g. in the Matroska format) containing visual (video without audio) data in a video coding format (e.g. VP9) alongside audio data in an audio coding format (e.g. Opus). The container can also contain synchronization information, subtitles, and metadata such as title. A standardized (or in some cases de facto standard) video file type such as .webm is a profile specified by a restriction on which container format and which video and audio compression formats are allowed.. The coded video and audio inside a video file container (i.e. not headers, footers, and metadata) is called the essence.\nSource: https://en.wikipedia.org/w/index.php?search=Video file format \n\nContent: Container Linux  (formerly CoreOS Linux) is a discontinued open-source lightweight operating system based on the Linux kernel and designed for providing infrastructure to clustered deployments, while focusing on automation, ease of application deployment, security, reliability and scalability. As an operating system, Container Linux provided only the minimal functionality required for deploying applications inside software containers, together with built-in mechanisms for service discovery and configuration sharing.[10][11][12][13][14]. Container Linux shares foundations with Gentoo Linux,[15][16] ChromeOS, and ChromiumOS through a common software development kit (SDK). Container Linux adds new functionality and customization to this shared foundation to support server hardware and use cases.[13][17]:\u200a7:02\u200a CoreOS was developed primarily by Alex Polvi, Brandon Philips and Michael Marineau,[12] with its major features available as a stable release.[18][19][20]. The CoreOS team announced the end-of-life for Container Linux on May 26, 2020,[1] offering Fedora CoreOS,[21] and RHEL CoreOS as its replacement, both based on Red Hat.. Container Linux provides no package manager as a way for distributing payload applications, requiring instead all applications to run inside their containers. Serving as a single control host, a Container Linux instance uses the underlying operating-system-level virtualization features of the Linux kernel to create and configure multiple containers that perform as isolated Linux systems. That way, resource partitioning between containers is performed through multiple isolated userspace instances, instead of using a hypervisor and providing full-fledged virtual machines. This approach relies on the Linux kernel's cgroups and namespaces functionalities,[22][23] which together provide abilities to limit, account and isolate resource usage (CPU, memory, disk I/O, etc.) for the collections of userspace processes.[11][14][24]. Initially, Container Linux exclusively used Docker as a component providing an additional layer of abstraction and interface[25] to the operating-system-level virtualization features of the Linux kernel, as well as providing a standardized format for containers that allows applications to run in different environments.[11][24]  In December 2014, CoreOS released and started to support rkt (initially released as Rocket) as an alternative to Docker, providing through it another standardized format of the application-container images, the related definition of the container runtime environment, and a protocol for discovering and retrieving container images.[26][27][28][29]  CoreOS provides rkt as an implementation of the so-called app container (appc) specification that describes required properties of the application container image (ACI).\nSource: https://en.wikipedia.org/w/index.php?search=Container Linux"
+                  },
+                  {
+                    "role": "user",
+                    "content": "What types of container software there are\n"
+                  }
+                ],
+                "temperature": 0.8,
+                "top_p": 1.0,
+                "n": 1,
+                "stream": false,
+                "stop": null,
+                "max_tokens": 256,
+                "presence_penalty": 0.0,
+                "frequency_penalty": 0.0,
+                "logit_bias": {},
+                "user": "",
+                "request_timeout": 30,
+                "api_base": "https://gpt-test-eus.openai.azure.com/",
+                "api_type": "azure",
+                "api_version": "2023-03-15-preview"
+              },
+              "output": {
+                "id": "chatcmpl-7c4D7qeukinuPVrUaQMmrMx1SW57s",
+                "object": "chat.completion",
+                "created": 1689307005,
+                "model": "gpt-35-turbo",
+                "choices": [
+                  {
+                    "index": 0,
+                    "finish_reason": "stop",
+                    "message": {
+                      "role": "assistant",
+                      "content": "There are several types of container software available, such as Docker, rkt (Rocket), LXC (Linux Containers), OpenVZ, and Kubernetes."
+                    }
+                  }
+                ],
+                "usage": {
+                  "completion_tokens": 31,
+                  "prompt_tokens": 835,
+                  "total_tokens": 866
+                }
+              },
+              "start_time": 1689278205.716785,
+              "end_time": 1689278207.116204,
+              "error": null,
+              "children": null,
+              "node_name": null
+            }
+          ],
+          "node_name": "augmented_chat"
+        }
+      ],
+      "variant_id": "",
+      "name": "",
+      "description": "",
+      "tags": null,
+      "system_metrics": {
+        "total_tokens": 1178,
+        "duration": 16.257039
+      },
+      "result": {
+        "answer": "There are several types of container software available, such as Docker, rkt (Rocket), LXC (Linux Containers), OpenVZ, and Kubernetes."
+      },
+      "upload_metrics": false
+    }
+  ],
+  "node_runs": [
+    {
+      "node": "extract_query_from_question",
+      "flow_run_id": "run_20230714115622",
+      "run_id": "run_20230714115622_extract_query_from_question_0",
+      "status": "Completed",
+      "inputs": {
+        "prompt": "system:\nYou are an AI assistant reading the transcript of a conversation between an AI and a human. Given an input question and conversation history, infer user real intent.\n\nThe conversation history is provided just in case of a coreference (e.g. \"What is this?\" where \"this\" is defined in previous conversation).\n\nReturn the output as query used for next round user message.\n\nuser:\nEXAMPLE\nConversation history:\nHuman: I want to find the best restaurants nearby, could you recommend some?\nAI: Sure, I can help you with that. Here are some of the best restaurants nearby: Rock Bar.\nHuman: How do I get to Rock Bar?\n\nOutput: directions to Rock Bar\nEND OF EXAMPLE\n\nEXAMPLE\nConversation history:\nHuman: I want to find the best restaurants nearby, could you recommend some?\nAI: Sure, I can help you with that. Here are some of the best restaurants nearby: Rock Bar.\nHuman: How do I get to Rock Bar?\nAI: To get to Rock Bar, you need to go to the 52nd floor of the Park A. You can take the subway to Station A and walk for about 8 minutes from exit A53. Alternatively, you can take the train to S Station and walk for about 12 minutes from the south exit3.\nHuman: Show me more restaurants.\n\nOutput: best restaurants nearby\nEND OF EXAMPLE\n\nConversation history (for reference only):\n{% for item in chat_history %}\nHuman: {{item.inputs.question}}\nAI: {{item.outputs.answer}}\n{% endfor %}\nHuman: {{question}}\n\nOutput:",
+        "deployment_name": "gpt-35-turbo",
+        "max_tokens": 256,
+        "temperature": 0.7,
+        "chat_history": [],
+        "question": "What types of container software there are"
+      },
+      "output": "types of container software",
+      "metrics": null,
+      "error": null,
+      "parent_run_id": "run_20230714115622_0",
+      "start_time": "2023-07-14T03:56:30.860164Z",
+      "end_time": "2023-07-14T03:56:32.486977Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "openai.api_resources.chat_completion.ChatCompletion.create",
+          "type": "LLM",
+          "inputs": {
+            "engine": "gpt-35-turbo",
+            "messages": [
+              {
+                "role": "system",
+                "content": "You are an AI assistant reading the transcript of a conversation between an AI and a human. Given an input question and conversation history, infer user real intent.\n\nThe conversation history is provided just in case of a coreference (e.g. \"What is this?\" where \"this\" is defined in previous conversation).\n\nReturn the output as query used for next round user message."
+              },
+              {
+                "role": "user",
+                "content": "EXAMPLE\nConversation history:\nHuman: I want to find the best restaurants nearby, could you recommend some?\nAI: Sure, I can help you with that. Here are some of the best restaurants nearby: Rock Bar.\nHuman: How do I get to Rock Bar?\n\nOutput: directions to Rock Bar\nEND OF EXAMPLE\n\nEXAMPLE\nConversation history:\nHuman: I want to find the best restaurants nearby, could you recommend some?\nAI: Sure, I can help you with that. Here are some of the best restaurants nearby: Rock Bar.\nHuman: How do I get to Rock Bar?\nAI: To get to Rock Bar, you need to go to the 52nd floor of the Park A. You can take the subway to Station A and walk for about 8 minutes from exit A53. Alternatively, you can take the train to S Station and walk for about 12 minutes from the south exit3.\nHuman: Show me more restaurants.\n\nOutput: best restaurants nearby\nEND OF EXAMPLE\n\nConversation history (for reference only):\nHuman: What types of container software there are\n\nOutput:"
+              }
+            ],
+            "temperature": 0.7,
+            "top_p": 1.0,
+            "n": 1,
+            "stream": false,
+            "stop": null,
+            "max_tokens": 256,
+            "presence_penalty": 0.0,
+            "frequency_penalty": 0.0,
+            "logit_bias": {},
+            "user": "",
+            "request_timeout": 30,
+            "api_base": "https://gpt-test-eus.openai.azure.com/",
+            "api_type": "azure",
+            "api_version": "2023-03-15-preview"
+          },
+          "output": {
+            "id": "chatcmpl-7c4Cth4BBkeqtp3Heyl1QIA3Fgbio",
+            "object": "chat.completion",
+            "created": 1689306991,
+            "model": "gpt-35-turbo",
+            "choices": [
+              {
+                "index": 0,
+                "finish_reason": "stop",
+                "message": {
+                  "role": "assistant",
+                  "content": "types of container software"
+                }
+              }
+            ],
+            "usage": {
+              "completion_tokens": 4,
+              "prompt_tokens": 308,
+              "total_tokens": 312
+            }
+          },
+          "start_time": 1689278190.870164,
+          "end_time": 1689278192.48598,
+          "error": null,
+          "children": null,
+          "node_name": null
+        }
+      ],
+      "variant_id": "",
+      "cached_run_id": null,
+      "cached_flow_run_id": null,
+      "logs": {
+        "stdout": "",
+        "stderr": ""
+      },
+      "system_metrics": {
+        "completion_tokens": 4,
+        "prompt_tokens": 308,
+        "total_tokens": 312,
+        "duration": 1.626813
+      },
+      "result": "types of container software"
+    },
+    {
+      "node": "get_wiki_url",
+      "flow_run_id": "run_20230714115622",
+      "run_id": "run_20230714115622_get_wiki_url_0",
+      "status": "Completed",
+      "inputs": {
+        "entity": "types of container software",
+        "count": 2
+      },
+      "output": [
+        "https://en.wikipedia.org/w/index.php?search=Video file format ",
+        "https://en.wikipedia.org/w/index.php?search=Container Linux"
+      ],
+      "metrics": null,
+      "error": null,
+      "parent_run_id": "run_20230714115622_0",
+      "start_time": "2023-07-14T03:56:32.489979Z",
+      "end_time": "2023-07-14T03:56:43.581342Z",
+      "index": 0,
+      "api_calls": [],
+      "variant_id": "",
+      "cached_run_id": null,
+      "cached_flow_run_id": null,
+      "logs": {
+        "stdout": "",
+        "stderr": ""
+      },
+      "system_metrics": {
+        "duration": 11.091363
+      },
+      "result": [
+        "https://en.wikipedia.org/w/index.php?search=Video file format ",
+        "https://en.wikipedia.org/w/index.php?search=Container Linux"
+      ]
+    },
+    {
+      "node": "search_result_from_url",
+      "flow_run_id": "run_20230714115622",
+      "run_id": "run_20230714115622_search_result_from_url_0",
+      "status": "Completed",
+      "inputs": {
+        "url_list": [
+          "https://en.wikipedia.org/w/index.php?search=Video file format ",
+          "https://en.wikipedia.org/w/index.php?search=Container Linux"
+        ],
+        "count": 10
+      },
+      "output": [
+        [
+          "https://en.wikipedia.org/w/index.php?search=Video file format ",
+          "A video file format is a type of  file format for storing digital video data on a computer system. Video is almost always stored using lossy compression to reduce the file size.. A video file normally consists of a container (e.g. in the Matroska format) containing visual (video without audio) data in a video coding format (e.g. VP9) alongside audio data in an audio coding format (e.g. Opus). The container can also contain synchronization information, subtitles, and metadata such as title. A standardized (or in some cases de facto standard) video file type such as .webm is a profile specified by a restriction on which container format and which video and audio compression formats are allowed.. The coded video and audio inside a video file container (i.e. not headers, footers, and metadata) is called the essence."
+        ],
+        [
+          "https://en.wikipedia.org/w/index.php?search=Container Linux",
+          "Container Linux  (formerly CoreOS Linux) is a discontinued open-source lightweight operating system based on the Linux kernel and designed for providing infrastructure to clustered deployments, while focusing on automation, ease of application deployment, security, reliability and scalability. As an operating system, Container Linux provided only the minimal functionality required for deploying applications inside software containers, together with built-in mechanisms for service discovery and configuration sharing.[10][11][12][13][14]. Container Linux shares foundations with Gentoo Linux,[15][16] ChromeOS, and ChromiumOS through a common software development kit (SDK). Container Linux adds new functionality and customization to this shared foundation to support server hardware and use cases.[13][17]:\u200a7:02\u200a CoreOS was developed primarily by Alex Polvi, Brandon Philips and Michael Marineau,[12] with its major features available as a stable release.[18][19][20]. The CoreOS team announced the end-of-life for Container Linux on May 26, 2020,[1] offering Fedora CoreOS,[21] and RHEL CoreOS as its replacement, both based on Red Hat.. Container Linux provides no package manager as a way for distributing payload applications, requiring instead all applications to run inside their containers. Serving as a single control host, a Container Linux instance uses the underlying operating-system-level virtualization features of the Linux kernel to create and configure multiple containers that perform as isolated Linux systems. That way, resource partitioning between containers is performed through multiple isolated userspace instances, instead of using a hypervisor and providing full-fledged virtual machines. This approach relies on the Linux kernel's cgroups and namespaces functionalities,[22][23] which together provide abilities to limit, account and isolate resource usage (CPU, memory, disk I/O, etc.) for the collections of userspace processes.[11][14][24]. Initially, Container Linux exclusively used Docker as a component providing an additional layer of abstraction and interface[25] to the operating-system-level virtualization features of the Linux kernel, as well as providing a standardized format for containers that allows applications to run in different environments.[11][24]  In December 2014, CoreOS released and started to support rkt (initially released as Rocket) as an alternative to Docker, providing through it another standardized format of the application-container images, the related definition of the container runtime environment, and a protocol for discovering and retrieving container images.[26][27][28][29]  CoreOS provides rkt as an implementation of the so-called app container (appc) specification that describes required properties of the application container image (ACI)."
+        ]
+      ],
+      "metrics": null,
+      "error": null,
+      "parent_run_id": "run_20230714115622_0",
+      "start_time": "2023-07-14T03:56:43.582339Z",
+      "end_time": "2023-07-14T03:56:45.709789Z",
+      "index": 0,
+      "api_calls": [],
+      "variant_id": "",
+      "cached_run_id": null,
+      "cached_flow_run_id": null,
+      "logs": {
+        "stdout": "",
+        "stderr": ""
+      },
+      "system_metrics": {
+        "duration": 2.12745
+      },
+      "result": [
+        [
+          "https://en.wikipedia.org/w/index.php?search=Video file format ",
+          "A video file format is a type of  file format for storing digital video data on a computer system. Video is almost always stored using lossy compression to reduce the file size.. A video file normally consists of a container (e.g. in the Matroska format) containing visual (video without audio) data in a video coding format (e.g. VP9) alongside audio data in an audio coding format (e.g. Opus). The container can also contain synchronization information, subtitles, and metadata such as title. A standardized (or in some cases de facto standard) video file type such as .webm is a profile specified by a restriction on which container format and which video and audio compression formats are allowed.. The coded video and audio inside a video file container (i.e. not headers, footers, and metadata) is called the essence."
+        ],
+        [
+          "https://en.wikipedia.org/w/index.php?search=Container Linux",
+          "Container Linux  (formerly CoreOS Linux) is a discontinued open-source lightweight operating system based on the Linux kernel and designed for providing infrastructure to clustered deployments, while focusing on automation, ease of application deployment, security, reliability and scalability. As an operating system, Container Linux provided only the minimal functionality required for deploying applications inside software containers, together with built-in mechanisms for service discovery and configuration sharing.[10][11][12][13][14]. Container Linux shares foundations with Gentoo Linux,[15][16] ChromeOS, and ChromiumOS through a common software development kit (SDK). Container Linux adds new functionality and customization to this shared foundation to support server hardware and use cases.[13][17]:\u200a7:02\u200a CoreOS was developed primarily by Alex Polvi, Brandon Philips and Michael Marineau,[12] with its major features available as a stable release.[18][19][20]. The CoreOS team announced the end-of-life for Container Linux on May 26, 2020,[1] offering Fedora CoreOS,[21] and RHEL CoreOS as its replacement, both based on Red Hat.. Container Linux provides no package manager as a way for distributing payload applications, requiring instead all applications to run inside their containers. Serving as a single control host, a Container Linux instance uses the underlying operating-system-level virtualization features of the Linux kernel to create and configure multiple containers that perform as isolated Linux systems. That way, resource partitioning between containers is performed through multiple isolated userspace instances, instead of using a hypervisor and providing full-fledged virtual machines. This approach relies on the Linux kernel's cgroups and namespaces functionalities,[22][23] which together provide abilities to limit, account and isolate resource usage (CPU, memory, disk I/O, etc.) for the collections of userspace processes.[11][14][24]. Initially, Container Linux exclusively used Docker as a component providing an additional layer of abstraction and interface[25] to the operating-system-level virtualization features of the Linux kernel, as well as providing a standardized format for containers that allows applications to run in different environments.[11][24]  In December 2014, CoreOS released and started to support rkt (initially released as Rocket) as an alternative to Docker, providing through it another standardized format of the application-container images, the related definition of the container runtime environment, and a protocol for discovering and retrieving container images.[26][27][28][29]  CoreOS provides rkt as an implementation of the so-called app container (appc) specification that describes required properties of the application container image (ACI)."
+        ]
+      ]
+    },
+    {
+      "node": "process_search_result",
+      "flow_run_id": "run_20230714115622",
+      "run_id": "run_20230714115622_process_search_result_0",
+      "status": "Completed",
+      "inputs": {
+        "search_result": [
+          [
+            "https://en.wikipedia.org/w/index.php?search=Video file format ",
+            "A video file format is a type of  file format for storing digital video data on a computer system. Video is almost always stored using lossy compression to reduce the file size.. A video file normally consists of a container (e.g. in the Matroska format) containing visual (video without audio) data in a video coding format (e.g. VP9) alongside audio data in an audio coding format (e.g. Opus). The container can also contain synchronization information, subtitles, and metadata such as title. A standardized (or in some cases de facto standard) video file type such as .webm is a profile specified by a restriction on which container format and which video and audio compression formats are allowed.. The coded video and audio inside a video file container (i.e. not headers, footers, and metadata) is called the essence."
+          ],
+          [
+            "https://en.wikipedia.org/w/index.php?search=Container Linux",
+            "Container Linux  (formerly CoreOS Linux) is a discontinued open-source lightweight operating system based on the Linux kernel and designed for providing infrastructure to clustered deployments, while focusing on automation, ease of application deployment, security, reliability and scalability. As an operating system, Container Linux provided only the minimal functionality required for deploying applications inside software containers, together with built-in mechanisms for service discovery and configuration sharing.[10][11][12][13][14]. Container Linux shares foundations with Gentoo Linux,[15][16] ChromeOS, and ChromiumOS through a common software development kit (SDK). Container Linux adds new functionality and customization to this shared foundation to support server hardware and use cases.[13][17]:\u200a7:02\u200a CoreOS was developed primarily by Alex Polvi, Brandon Philips and Michael Marineau,[12] with its major features available as a stable release.[18][19][20]. The CoreOS team announced the end-of-life for Container Linux on May 26, 2020,[1] offering Fedora CoreOS,[21] and RHEL CoreOS as its replacement, both based on Red Hat.. Container Linux provides no package manager as a way for distributing payload applications, requiring instead all applications to run inside their containers. Serving as a single control host, a Container Linux instance uses the underlying operating-system-level virtualization features of the Linux kernel to create and configure multiple containers that perform as isolated Linux systems. That way, resource partitioning between containers is performed through multiple isolated userspace instances, instead of using a hypervisor and providing full-fledged virtual machines. This approach relies on the Linux kernel's cgroups and namespaces functionalities,[22][23] which together provide abilities to limit, account and isolate resource usage (CPU, memory, disk I/O, etc.) for the collections of userspace processes.[11][14][24]. Initially, Container Linux exclusively used Docker as a component providing an additional layer of abstraction and interface[25] to the operating-system-level virtualization features of the Linux kernel, as well as providing a standardized format for containers that allows applications to run in different environments.[11][24]  In December 2014, CoreOS released and started to support rkt (initially released as Rocket) as an alternative to Docker, providing through it another standardized format of the application-container images, the related definition of the container runtime environment, and a protocol for discovering and retrieving container images.[26][27][28][29]  CoreOS provides rkt as an implementation of the so-called app container (appc) specification that describes required properties of the application container image (ACI)."
+          ]
+        ]
+      },
+      "output": "Content: A video file format is a type of  file format for storing digital video data on a computer system. Video is almost always stored using lossy compression to reduce the file size.. A video file normally consists of a container (e.g. in the Matroska format) containing visual (video without audio) data in a video coding format (e.g. VP9) alongside audio data in an audio coding format (e.g. Opus). The container can also contain synchronization information, subtitles, and metadata such as title. A standardized (or in some cases de facto standard) video file type such as .webm is a profile specified by a restriction on which container format and which video and audio compression formats are allowed.. The coded video and audio inside a video file container (i.e. not headers, footers, and metadata) is called the essence.\nSource: https://en.wikipedia.org/w/index.php?search=Video file format \n\nContent: Container Linux  (formerly CoreOS Linux) is a discontinued open-source lightweight operating system based on the Linux kernel and designed for providing infrastructure to clustered deployments, while focusing on automation, ease of application deployment, security, reliability and scalability. As an operating system, Container Linux provided only the minimal functionality required for deploying applications inside software containers, together with built-in mechanisms for service discovery and configuration sharing.[10][11][12][13][14]. Container Linux shares foundations with Gentoo Linux,[15][16] ChromeOS, and ChromiumOS through a common software development kit (SDK). Container Linux adds new functionality and customization to this shared foundation to support server hardware and use cases.[13][17]:\u200a7:02\u200a CoreOS was developed primarily by Alex Polvi, Brandon Philips and Michael Marineau,[12] with its major features available as a stable release.[18][19][20]. The CoreOS team announced the end-of-life for Container Linux on May 26, 2020,[1] offering Fedora CoreOS,[21] and RHEL CoreOS as its replacement, both based on Red Hat.. Container Linux provides no package manager as a way for distributing payload applications, requiring instead all applications to run inside their containers. Serving as a single control host, a Container Linux instance uses the underlying operating-system-level virtualization features of the Linux kernel to create and configure multiple containers that perform as isolated Linux systems. That way, resource partitioning between containers is performed through multiple isolated userspace instances, instead of using a hypervisor and providing full-fledged virtual machines. This approach relies on the Linux kernel's cgroups and namespaces functionalities,[22][23] which together provide abilities to limit, account and isolate resource usage (CPU, memory, disk I/O, etc.) for the collections of userspace processes.[11][14][24]. Initially, Container Linux exclusively used Docker as a component providing an additional layer of abstraction and interface[25] to the operating-system-level virtualization features of the Linux kernel, as well as providing a standardized format for containers that allows applications to run in different environments.[11][24]  In December 2014, CoreOS released and started to support rkt (initially released as Rocket) as an alternative to Docker, providing through it another standardized format of the application-container images, the related definition of the container runtime environment, and a protocol for discovering and retrieving container images.[26][27][28][29]  CoreOS provides rkt as an implementation of the so-called app container (appc) specification that describes required properties of the application container image (ACI).\nSource: https://en.wikipedia.org/w/index.php?search=Container Linux",
+      "metrics": null,
+      "error": null,
+      "parent_run_id": "run_20230714115622_0",
+      "start_time": "2023-07-14T03:56:45.709789Z",
+      "end_time": "2023-07-14T03:56:45.710792Z",
+      "index": 0,
+      "api_calls": [],
+      "variant_id": "",
+      "cached_run_id": null,
+      "cached_flow_run_id": null,
+      "logs": {
+        "stdout": "",
+        "stderr": ""
+      },
+      "system_metrics": {
+        "duration": 0.001003
+      },
+      "result": "Content: A video file format is a type of  file format for storing digital video data on a computer system. Video is almost always stored using lossy compression to reduce the file size.. A video file normally consists of a container (e.g. in the Matroska format) containing visual (video without audio) data in a video coding format (e.g. VP9) alongside audio data in an audio coding format (e.g. Opus). The container can also contain synchronization information, subtitles, and metadata such as title. A standardized (or in some cases de facto standard) video file type such as .webm is a profile specified by a restriction on which container format and which video and audio compression formats are allowed.. The coded video and audio inside a video file container (i.e. not headers, footers, and metadata) is called the essence.\nSource: https://en.wikipedia.org/w/index.php?search=Video file format \n\nContent: Container Linux  (formerly CoreOS Linux) is a discontinued open-source lightweight operating system based on the Linux kernel and designed for providing infrastructure to clustered deployments, while focusing on automation, ease of application deployment, security, reliability and scalability. As an operating system, Container Linux provided only the minimal functionality required for deploying applications inside software containers, together with built-in mechanisms for service discovery and configuration sharing.[10][11][12][13][14]. Container Linux shares foundations with Gentoo Linux,[15][16] ChromeOS, and ChromiumOS through a common software development kit (SDK). Container Linux adds new functionality and customization to this shared foundation to support server hardware and use cases.[13][17]:\u200a7:02\u200a CoreOS was developed primarily by Alex Polvi, Brandon Philips and Michael Marineau,[12] with its major features available as a stable release.[18][19][20]. The CoreOS team announced the end-of-life for Container Linux on May 26, 2020,[1] offering Fedora CoreOS,[21] and RHEL CoreOS as its replacement, both based on Red Hat.. Container Linux provides no package manager as a way for distributing payload applications, requiring instead all applications to run inside their containers. Serving as a single control host, a Container Linux instance uses the underlying operating-system-level virtualization features of the Linux kernel to create and configure multiple containers that perform as isolated Linux systems. That way, resource partitioning between containers is performed through multiple isolated userspace instances, instead of using a hypervisor and providing full-fledged virtual machines. This approach relies on the Linux kernel's cgroups and namespaces functionalities,[22][23] which together provide abilities to limit, account and isolate resource usage (CPU, memory, disk I/O, etc.) for the collections of userspace processes.[11][14][24]. Initially, Container Linux exclusively used Docker as a component providing an additional layer of abstraction and interface[25] to the operating-system-level virtualization features of the Linux kernel, as well as providing a standardized format for containers that allows applications to run in different environments.[11][24]  In December 2014, CoreOS released and started to support rkt (initially released as Rocket) as an alternative to Docker, providing through it another standardized format of the application-container images, the related definition of the container runtime environment, and a protocol for discovering and retrieving container images.[26][27][28][29]  CoreOS provides rkt as an implementation of the so-called app container (appc) specification that describes required properties of the application container image (ACI).\nSource: https://en.wikipedia.org/w/index.php?search=Container Linux"
+    },
+    {
+      "node": "augmented_chat",
+      "flow_run_id": "run_20230714115622",
+      "run_id": "run_20230714115622_augmented_chat_0",
+      "status": "Completed",
+      "inputs": {
+        "prompt": "system:\nYou are a chatbot having a conversation with a human.\nGiven the following extracted parts of a long document and a question, create a final answer with references (\"SOURCES\").\nIf you don't know the answer, just say that you don't know. Don't try to make up an answer.\nALWAYS return a \"SOURCES\" part in your answer.\n\n{{contexts}}\n\n{% for item in chat_history %}\nuser:\n{{item.inputs.question}}\nassistant:\n{{item.outputs.answer}}\n{% endfor %}\n\nuser:\n{{question}}\n",
+        "deployment_name": "gpt-35-turbo",
+        "max_tokens": 256,
+        "temperature": 0.8,
+        "chat_history": [],
+        "question": "What types of container software there are",
+        "contexts": "Content: A video file format is a type of  file format for storing digital video data on a computer system. Video is almost always stored using lossy compression to reduce the file size.. A video file normally consists of a container (e.g. in the Matroska format) containing visual (video without audio) data in a video coding format (e.g. VP9) alongside audio data in an audio coding format (e.g. Opus). The container can also contain synchronization information, subtitles, and metadata such as title. A standardized (or in some cases de facto standard) video file type such as .webm is a profile specified by a restriction on which container format and which video and audio compression formats are allowed.. The coded video and audio inside a video file container (i.e. not headers, footers, and metadata) is called the essence.\nSource: https://en.wikipedia.org/w/index.php?search=Video file format \n\nContent: Container Linux  (formerly CoreOS Linux) is a discontinued open-source lightweight operating system based on the Linux kernel and designed for providing infrastructure to clustered deployments, while focusing on automation, ease of application deployment, security, reliability and scalability. As an operating system, Container Linux provided only the minimal functionality required for deploying applications inside software containers, together with built-in mechanisms for service discovery and configuration sharing.[10][11][12][13][14]. Container Linux shares foundations with Gentoo Linux,[15][16] ChromeOS, and ChromiumOS through a common software development kit (SDK). Container Linux adds new functionality and customization to this shared foundation to support server hardware and use cases.[13][17]:\u200a7:02\u200a CoreOS was developed primarily by Alex Polvi, Brandon Philips and Michael Marineau,[12] with its major features available as a stable release.[18][19][20]. The CoreOS team announced the end-of-life for Container Linux on May 26, 2020,[1] offering Fedora CoreOS,[21] and RHEL CoreOS as its replacement, both based on Red Hat.. Container Linux provides no package manager as a way for distributing payload applications, requiring instead all applications to run inside their containers. Serving as a single control host, a Container Linux instance uses the underlying operating-system-level virtualization features of the Linux kernel to create and configure multiple containers that perform as isolated Linux systems. That way, resource partitioning between containers is performed through multiple isolated userspace instances, instead of using a hypervisor and providing full-fledged virtual machines. This approach relies on the Linux kernel's cgroups and namespaces functionalities,[22][23] which together provide abilities to limit, account and isolate resource usage (CPU, memory, disk I/O, etc.) for the collections of userspace processes.[11][14][24]. Initially, Container Linux exclusively used Docker as a component providing an additional layer of abstraction and interface[25] to the operating-system-level virtualization features of the Linux kernel, as well as providing a standardized format for containers that allows applications to run in different environments.[11][24]  In December 2014, CoreOS released and started to support rkt (initially released as Rocket) as an alternative to Docker, providing through it another standardized format of the application-container images, the related definition of the container runtime environment, and a protocol for discovering and retrieving container images.[26][27][28][29]  CoreOS provides rkt as an implementation of the so-called app container (appc) specification that describes required properties of the application container image (ACI).\nSource: https://en.wikipedia.org/w/index.php?search=Container Linux"
+      },
+      "output": "There are several types of container software available, such as Docker, rkt (Rocket), LXC (Linux Containers), OpenVZ, and Kubernetes.",
+      "metrics": null,
+      "error": null,
+      "parent_run_id": "run_20230714115622_0",
+      "start_time": "2023-07-14T03:56:45.711788Z",
+      "end_time": "2023-07-14T03:56:47.117203Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "openai.api_resources.chat_completion.ChatCompletion.create",
+          "type": "LLM",
+          "inputs": {
+            "engine": "gpt-35-turbo",
+            "messages": [
+              {
+                "role": "system",
+                "content": "You are a chatbot having a conversation with a human.\nGiven the following extracted parts of a long document and a question, create a final answer with references (\"SOURCES\").\nIf you don't know the answer, just say that you don't know. Don't try to make up an answer.\nALWAYS return a \"SOURCES\" part in your answer.\n\nContent: A video file format is a type of  file format for storing digital video data on a computer system. Video is almost always stored using lossy compression to reduce the file size.. A video file normally consists of a container (e.g. in the Matroska format) containing visual (video without audio) data in a video coding format (e.g. VP9) alongside audio data in an audio coding format (e.g. Opus). The container can also contain synchronization information, subtitles, and metadata such as title. A standardized (or in some cases de facto standard) video file type such as .webm is a profile specified by a restriction on which container format and which video and audio compression formats are allowed.. The coded video and audio inside a video file container (i.e. not headers, footers, and metadata) is called the essence.\nSource: https://en.wikipedia.org/w/index.php?search=Video file format \n\nContent: Container Linux  (formerly CoreOS Linux) is a discontinued open-source lightweight operating system based on the Linux kernel and designed for providing infrastructure to clustered deployments, while focusing on automation, ease of application deployment, security, reliability and scalability. As an operating system, Container Linux provided only the minimal functionality required for deploying applications inside software containers, together with built-in mechanisms for service discovery and configuration sharing.[10][11][12][13][14]. Container Linux shares foundations with Gentoo Linux,[15][16] ChromeOS, and ChromiumOS through a common software development kit (SDK). Container Linux adds new functionality and customization to this shared foundation to support server hardware and use cases.[13][17]:\u200a7:02\u200a CoreOS was developed primarily by Alex Polvi, Brandon Philips and Michael Marineau,[12] with its major features available as a stable release.[18][19][20]. The CoreOS team announced the end-of-life for Container Linux on May 26, 2020,[1] offering Fedora CoreOS,[21] and RHEL CoreOS as its replacement, both based on Red Hat.. Container Linux provides no package manager as a way for distributing payload applications, requiring instead all applications to run inside their containers. Serving as a single control host, a Container Linux instance uses the underlying operating-system-level virtualization features of the Linux kernel to create and configure multiple containers that perform as isolated Linux systems. That way, resource partitioning between containers is performed through multiple isolated userspace instances, instead of using a hypervisor and providing full-fledged virtual machines. This approach relies on the Linux kernel's cgroups and namespaces functionalities,[22][23] which together provide abilities to limit, account and isolate resource usage (CPU, memory, disk I/O, etc.) for the collections of userspace processes.[11][14][24]. Initially, Container Linux exclusively used Docker as a component providing an additional layer of abstraction and interface[25] to the operating-system-level virtualization features of the Linux kernel, as well as providing a standardized format for containers that allows applications to run in different environments.[11][24]  In December 2014, CoreOS released and started to support rkt (initially released as Rocket) as an alternative to Docker, providing through it another standardized format of the application-container images, the related definition of the container runtime environment, and a protocol for discovering and retrieving container images.[26][27][28][29]  CoreOS provides rkt as an implementation of the so-called app container (appc) specification that describes required properties of the application container image (ACI).\nSource: https://en.wikipedia.org/w/index.php?search=Container Linux"
+              },
+              {
+                "role": "user",
+                "content": "What types of container software there are\n"
+              }
+            ],
+            "temperature": 0.8,
+            "top_p": 1.0,
+            "n": 1,
+            "stream": false,
+            "stop": null,
+            "max_tokens": 256,
+            "presence_penalty": 0.0,
+            "frequency_penalty": 0.0,
+            "logit_bias": {},
+            "user": "",
+            "request_timeout": 30,
+            "api_base": "https://gpt-test-eus.openai.azure.com/",
+            "api_type": "azure",
+            "api_version": "2023-03-15-preview"
+          },
+          "output": {
+            "id": "chatcmpl-7c4D7qeukinuPVrUaQMmrMx1SW57s",
+            "object": "chat.completion",
+            "created": 1689307005,
+            "model": "gpt-35-turbo",
+            "choices": [
+              {
+                "index": 0,
+                "finish_reason": "stop",
+                "message": {
+                  "role": "assistant",
+                  "content": "There are several types of container software available, such as Docker, rkt (Rocket), LXC (Linux Containers), OpenVZ, and Kubernetes."
+                }
+              }
+            ],
+            "usage": {
+              "completion_tokens": 31,
+              "prompt_tokens": 835,
+              "total_tokens": 866
+            }
+          },
+          "start_time": 1689278205.716785,
+          "end_time": 1689278207.116204,
+          "error": null,
+          "children": null,
+          "node_name": null
+        }
+      ],
+      "variant_id": "",
+      "cached_run_id": null,
+      "cached_flow_run_id": null,
+      "logs": {
+        "stdout": "",
+        "stderr": ""
+      },
+      "system_metrics": {
+        "completion_tokens": 31,
+        "prompt_tokens": 835,
+        "total_tokens": 866,
+        "duration": 1.405415
+      },
+      "result": "There are several types of container software available, such as Docker, rkt (Rocket), LXC (Linux Containers), OpenVZ, and Kubernetes."
+    }
+  ]
+}
